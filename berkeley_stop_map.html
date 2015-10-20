@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+   <link rel="stylesheet" href="https://rawgit.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.css">
+   <script src="https://rawgithub.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.js"></script>
+
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+
+   <link rel="stylesheet" href="https://birdage.github.io/Leaflet.awesome-markers/dist/leaflet.awesome.rotate.css">
+
+   
+   
+   
+   
+
+   <style>
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position:absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+      }
+
+   </style>
+</head>
+
+<body>
+
+   <div class="folium-map" id="folium_e49bccfa407141af9038b5e41968dd10" style="width: 100%; height: 100%"></div>
+
+   <script>
+
+      
+
+      var base_tile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 18,
+          minZoom: 1,
+          attribution: 'Map data (c) <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+      });
+
+      var baseLayer = {
+        "Base Layer": base_tile
+      };
+
+      /*
+      addition of the wms layers
+      */
+
+      
+
+      /*
+      addition of the tile layers
+      */
+      
+
+      /*
+      list of layers to be added
+      */
+      var layer_list = {
+      
+      };
+
+      /*
+      Bounding box.
+      */
+      var southWest = L.latLng(-90, -180),
+          northEast = L.latLng(90, 180),
+          bounds = L.latLngBounds(southWest, northEast);
+
+      /*
+      Creates the map and adds the selected layers
+      */
+      var map = L.map('folium_e49bccfa407141af9038b5e41968dd10', {
+                                       center:[37.87, -122.259],
+                                       zoom: 14,
+                                       maxBounds: bounds,
+                                       layers: [base_tile]
+                                     });
+
+      L.control.layers(baseLayer, layer_list).addTo(map);
+
+      //cluster group
+      var clusteredmarkers = L.markerClusterGroup();
+      //section for adding clustered markers
+      
+      //add the clustered markers to the group anyway
+      map.addLayer(clusteredmarkers);
+
+      
+      var marker_1_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_1 = L.marker([37.871918, 
+							-122.2706021],
+							{'icon':marker_1_icon}
+							);
+      marker_1.bindPopup("2/26/15 22:39<br />Traffic<br />OM4TWN");
+      marker_1._popup.options.maxWidth = 300;
+      map.addLayer(marker_1)
+      
+      var marker_2_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_2 = L.marker([37.8570436, 
+							-122.2530418],
+							{'icon':marker_2_icon}
+							);
+      marker_2.bindPopup("2/6/15 20:21<br />Traffic<br />BM3TWN");
+      marker_2._popup.options.maxWidth = 300;
+      map.addLayer(marker_2)
+      
+      var marker_3_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_3 = L.marker([37.8693804, 
+							-122.2895262],
+							{'icon':marker_3_icon}
+							);
+      marker_3.bindPopup("2/5/15 14:22<br />Traffic<br />M");
+      marker_3._popup.options.maxWidth = 300;
+      map.addLayer(marker_3)
+      
+      var marker_4_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_4 = L.marker([37.868032, 
+							-122.2977077],
+							{'icon':marker_4_icon}
+							);
+      marker_4.bindPopup("2/27/15 10:33<br />Traffic<br />WM4TCN");
+      marker_4._popup.options.maxWidth = 300;
+      map.addLayer(marker_4)
+      
+      var marker_5_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_5 = L.marker([37.8624063, 
+							-122.2923961],
+							{'icon':marker_5_icon}
+							);
+      marker_5.bindPopup("2/20/15 19:57<br />Traffic<br />M");
+      marker_5._popup.options.maxWidth = 300;
+      map.addLayer(marker_5)
+      
+      var marker_6_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_6 = L.marker([37.8684859, 
+							-122.2955316],
+							{'icon':marker_6_icon}
+							);
+      marker_6.bindPopup("2/27/15 9:48<br />Traffic<br />WF2TCN");
+      marker_6._popup.options.maxWidth = 300;
+      map.addLayer(marker_6)
+      
+      var marker_7_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_7 = L.marker([37.871615, 
+							-122.270489],
+							{'icon':marker_7_icon}
+							);
+      marker_7.bindPopup("2/17/15 8:40<br />Pedestrian<br />M");
+      marker_7._popup.options.maxWidth = 300;
+      map.addLayer(marker_7)
+      
+      var marker_8_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_8 = L.marker([37.8715926, 
+							-122.272747],
+							{'icon':marker_8_icon}
+							);
+      marker_8.bindPopup("3/8/15 21:01<br />Traffic<br />WF4TWN");
+      marker_8._popup.options.maxWidth = 300;
+      map.addLayer(marker_8)
+      
+      var marker_9_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_9 = L.marker([37.8612545, 
+							-122.2671221],
+							{'icon':marker_9_icon}
+							);
+      marker_9.bindPopup("2/5/15 11:22<br />Traffic<br />OM1IOS");
+      marker_9._popup.options.maxWidth = 300;
+      map.addLayer(marker_9)
+      
+      var marker_10_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_10 = L.marker([37.8688246, 
+							-122.2932768],
+							{'icon':marker_10_icon}
+							);
+      marker_10.bindPopup("2/23/15 0:39<br />Traffic<br />WM4TWN");
+      marker_10._popup.options.maxWidth = 300;
+      map.addLayer(marker_10)
+      
+      var marker_11_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_11 = L.marker([37.8641557, 
+							-122.2585271],
+							{'icon':marker_11_icon}
+							);
+      marker_11.bindPopup("2/7/15 19:37<br />Traffic<br />AM2TWN");
+      marker_11._popup.options.maxWidth = 300;
+      map.addLayer(marker_11)
+      
+      var marker_12_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_12 = L.marker([37.8510132, 
+							-122.2910649],
+							{'icon':marker_12_icon}
+							);
+      marker_12.bindPopup("1/28/15 8:02<br />Traffic<br />WF4TCN");
+      marker_12._popup.options.maxWidth = 300;
+      map.addLayer(marker_12)
+      
+      var marker_13_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_13 = L.marker([37.8508442, 
+							-122.255601],
+							{'icon':marker_13_icon}
+							);
+      marker_13.bindPopup("3/5/15 16:45<br />Traffic<br />WF2TCN");
+      marker_13._popup.options.maxWidth = 300;
+      map.addLayer(marker_13)
+      
+      var marker_14_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_14 = L.marker([37.8724567, 
+							-122.2731207],
+							{'icon':marker_14_icon}
+							);
+      marker_14.bindPopup("3/2/15 2:42<br />Traffic<br />WM4TWN");
+      marker_14._popup.options.maxWidth = 300;
+      map.addLayer(marker_14)
+      
+      var marker_15_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_15 = L.marker([37.8547666, 
+							-122.2689264],
+							{'icon':marker_15_icon}
+							);
+      marker_15.bindPopup("2/4/15 10:59<br />Traffic<br />WF2TCN");
+      marker_15._popup.options.maxWidth = 300;
+      map.addLayer(marker_15)
+      
+      var marker_16_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_16 = L.marker([37.866468, 
+							-122.267812],
+							{'icon':marker_16_icon}
+							);
+      marker_16.bindPopup("2/1/15 12:30<br />Pedestrian<br />BM4RWN");
+      marker_16._popup.options.maxWidth = 300;
+      map.addLayer(marker_16)
+      
+      var marker_17_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_17 = L.marker([37.8570557, 
+							-122.2713947],
+							{'icon':marker_17_icon}
+							);
+      marker_17.bindPopup("3/3/15 8:11<br />Traffic<br />BM4TCN");
+      marker_17._popup.options.maxWidth = 300;
+      map.addLayer(marker_17)
+      
+      var marker_18_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_18 = L.marker([37.8524898, 
+							-122.2709328],
+							{'icon':marker_18_icon}
+							);
+      marker_18.bindPopup("3/9/15 7:57<br />Traffic<br />AF2TCN");
+      marker_18._popup.options.maxWidth = 300;
+      map.addLayer(marker_18)
+      
+      var marker_19_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_19 = L.marker([37.8715926, 
+							-122.272747],
+							{'icon':marker_19_icon}
+							);
+      marker_19.bindPopup("3/5/15 14:28<br />Traffic<br />OM4TCN");
+      marker_19._popup.options.maxWidth = 300;
+      map.addLayer(marker_19)
+      
+      var marker_20_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_20 = L.marker([37.8624992, 
+							-122.2470574],
+							{'icon':marker_20_icon}
+							);
+      marker_20.bindPopup("3/10/15 8:56<br />Traffic<br />WM4TCN");
+      marker_20._popup.options.maxWidth = 300;
+      map.addLayer(marker_20)
+      
+      var marker_21_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_21 = L.marker([37.855543, 
+							-122.2645787],
+							{'icon':marker_21_icon}
+							);
+      marker_21.bindPopup("2/16/15 1:46<br />Traffic<br />WF2TWN");
+      marker_21._popup.options.maxWidth = 300;
+      map.addLayer(marker_21)
+      
+      var marker_22_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_22 = L.marker([37.8688246, 
+							-122.2932768],
+							{'icon':marker_22_icon}
+							);
+      marker_22.bindPopup("2/13/15 21:30<br />Suspicious Vehicle<br />M");
+      marker_22._popup.options.maxWidth = 300;
+      map.addLayer(marker_22)
+      
+      var marker_23_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_23 = L.marker([37.8666209, 
+							-122.2610857],
+							{'icon':marker_23_icon}
+							);
+      marker_23.bindPopup("1/29/15 23:20<br />Traffic<br />OF2TCN");
+      marker_23._popup.options.maxWidth = 300;
+      map.addLayer(marker_23)
+      
+      var marker_24_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_24 = L.marker([37.8541885, 
+							-122.2791483],
+							{'icon':marker_24_icon}
+							);
+      marker_24.bindPopup("1/28/15 8:33<br />Traffic<br />WF4TCN");
+      marker_24._popup.options.maxWidth = 300;
+      map.addLayer(marker_24)
+      
+      var marker_25_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_25 = L.marker([37.87967285, 
+							-122.3072962],
+							{'icon':marker_25_icon}
+							);
+      marker_25.bindPopup("2/9/15 11:12<br />Traffic<br />BM4TCN");
+      marker_25._popup.options.maxWidth = 300;
+      map.addLayer(marker_25)
+      
+      var marker_26_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_26 = L.marker([37.8674642, 
+							-122.2594219],
+							{'icon':marker_26_icon}
+							);
+      marker_26.bindPopup("2/9/15 17:31<br />Pedestrian<br />AR, WM4RCS");
+      marker_26._popup.options.maxWidth = 300;
+      map.addLayer(marker_26)
+      
+      var marker_27_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_27 = L.marker([37.8649541, 
+							-122.2589126],
+							{'icon':marker_27_icon}
+							);
+      marker_27.bindPopup("2/24/15 22:44<br />Pedestrian<br />M");
+      marker_27._popup.options.maxWidth = 300;
+      map.addLayer(marker_27)
+      
+      var marker_28_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_28 = L.marker([37.8670261, 
+							-122.2999613],
+							{'icon':marker_28_icon}
+							);
+      marker_28.bindPopup("1/30/15 18:12<br />Traffic<br />M");
+      marker_28._popup.options.maxWidth = 300;
+      map.addLayer(marker_28)
+      
+      var marker_29_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_29 = L.marker([37.8674642, 
+							-122.2594219],
+							{'icon':marker_29_icon}
+							);
+      marker_29.bindPopup("2/2/15 17:30<br />Pedestrian<br />WM2RWN");
+      marker_29._popup.options.maxWidth = 300;
+      map.addLayer(marker_29)
+      
+      var marker_30_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_30 = L.marker([37.8692363, 
+							-122.2682686],
+							{'icon':marker_30_icon}
+							);
+      marker_30.bindPopup("1/26/15 17:19<br />Pedestrian<br />BF4RCN");
+      marker_30._popup.options.maxWidth = 300;
+      map.addLayer(marker_30)
+      
+      var marker_31_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_31 = L.marker([37.8688182, 
+							-122.292428],
+							{'icon':marker_31_icon}
+							);
+      marker_31.bindPopup("2/27/15 20:26<br />Traffic<br />BM3TWN");
+      marker_31._popup.options.maxWidth = 300;
+      map.addLayer(marker_31)
+      
+      var marker_32_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_32 = L.marker([37.8715926, 
+							-122.272747],
+							{'icon':marker_32_icon}
+							);
+      marker_32.bindPopup("3/6/15 0:19<br />Traffic<br />HM1TCN");
+      marker_32._popup.options.maxWidth = 300;
+      map.addLayer(marker_32)
+      
+      var marker_33_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_33 = L.marker([37.8687133, 
+							-122.2944035],
+							{'icon':marker_33_icon}
+							);
+      marker_33.bindPopup("1/30/15 22:00<br />Traffic<br />HM2TWS");
+      marker_33._popup.options.maxWidth = 300;
+      map.addLayer(marker_33)
+      
+      var marker_34_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_34 = L.marker([37.8693997, 
+							-122.2678732],
+							{'icon':marker_34_icon}
+							);
+      marker_34.bindPopup("2/16/15 18:31<br />Pedestrian<br />M");
+      marker_34._popup.options.maxWidth = 300;
+      map.addLayer(marker_34)
+      
+      var marker_35_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_35 = L.marker([37.8690521, 
+							-122.2921723],
+							{'icon':marker_35_icon}
+							);
+      marker_35.bindPopup("2/1/15 1:19<br />Traffic<br />P");
+      marker_35._popup.options.maxWidth = 300;
+      map.addLayer(marker_35)
+      
+      var marker_36_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_36 = L.marker([37.8716087, 
+							-122.2730269],
+							{'icon':marker_36_icon}
+							);
+      marker_36.bindPopup("1/26/15 10:05<br />Traffic<br />OM4TCN");
+      marker_36._popup.options.maxWidth = 300;
+      map.addLayer(marker_36)
+      
+      var marker_37_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_37 = L.marker([37.8654556, 
+							-122.270051],
+							{'icon':marker_37_icon}
+							);
+      marker_37.bindPopup("3/3/15 8:53<br />Traffic<br />WF3TCN");
+      marker_37._popup.options.maxWidth = 300;
+      map.addLayer(marker_37)
+      
+      var marker_38_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_38 = L.marker([37.8721732, 
+							-122.2678009],
+							{'icon':marker_38_icon}
+							);
+      marker_38.bindPopup("2/3/15 13:56<br />Traffic<br />WF4TWN");
+      marker_38._popup.options.maxWidth = 300;
+      map.addLayer(marker_38)
+      
+      var marker_39_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_39 = L.marker([37.8506846, 
+							-122.2706115],
+							{'icon':marker_39_icon}
+							);
+      marker_39.bindPopup("3/8/15 21:26<br />Pedestrian<br />WM2TWS");
+      marker_39._popup.options.maxWidth = 300;
+      map.addLayer(marker_39)
+      
+      var marker_40_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_40 = L.marker([37.8579794, 
+							-122.2639191],
+							{'icon':marker_40_icon}
+							);
+      marker_40.bindPopup("2/9/15 8:08<br />Traffic<br />OM4TCN");
+      marker_40._popup.options.maxWidth = 300;
+      map.addLayer(marker_40)
+      
+      var marker_41_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_41 = L.marker([37.8633594, 
+							-122.2576071],
+							{'icon':marker_41_icon}
+							);
+      marker_41.bindPopup("2/3/15 13:36<br />Bicycle<br />FC");
+      marker_41._popup.options.maxWidth = 300;
+      map.addLayer(marker_41)
+      
+      var marker_42_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_42 = L.marker([37.8688182, 
+							-122.292428],
+							{'icon':marker_42_icon}
+							);
+      marker_42.bindPopup("2/25/15 8:29<br />Pedestrian<br />M");
+      marker_42._popup.options.maxWidth = 300;
+      map.addLayer(marker_42)
+      
+      var marker_43_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_43 = L.marker([37.8630812, 
+							-122.2671851],
+							{'icon':marker_43_icon}
+							);
+      marker_43.bindPopup("3/7/15 8:12<br />Traffic<br />WM4TWN");
+      marker_43._popup.options.maxWidth = 300;
+      map.addLayer(marker_43)
+      
+      var marker_44_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_44 = L.marker([37.8716087, 
+							-122.2730269],
+							{'icon':marker_44_icon}
+							);
+      marker_44.bindPopup("1/26/15 9:46<br />Traffic<br />OF4TCN");
+      marker_44._popup.options.maxWidth = 300;
+      map.addLayer(marker_44)
+      
+      var marker_45_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_45 = L.marker([37.865707, 
+							-122.2539054],
+							{'icon':marker_45_icon}
+							);
+      marker_45.bindPopup("2/24/15 21:40<br />Traffic<br />OM2TCN");
+      marker_45._popup.options.maxWidth = 300;
+      map.addLayer(marker_45)
+      
+      var marker_46_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_46 = L.marker([37.868032, 
+							-122.2977077],
+							{'icon':marker_46_icon}
+							);
+      marker_46.bindPopup("1/30/15 20:28<br />Traffic<br />BM4TWN, M");
+      marker_46._popup.options.maxWidth = 300;
+      map.addLayer(marker_46)
+      
+      var marker_47_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_47 = L.marker([37.8425257, 
+							-122.2836361],
+							{'icon':marker_47_icon}
+							);
+      marker_47.bindPopup("2/11/15 1:12<br />Traffic<br />WF2TWN");
+      marker_47._popup.options.maxWidth = 300;
+      map.addLayer(marker_47)
+      
+      var marker_48_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_48 = L.marker([37.863513, 
+							-122.296221],
+							{'icon':marker_48_icon}
+							);
+      marker_48.bindPopup("2/11/15 11:19<br />Traffic<br />WM4TCN");
+      marker_48._popup.options.maxWidth = 300;
+      map.addLayer(marker_48)
+      
+      var marker_49_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_49 = L.marker([37.8660242, 
+							-122.2586271],
+							{'icon':marker_49_icon}
+							);
+      marker_49.bindPopup("2/28/15 22:49<br />Pedestrian<br />BM3TWN");
+      marker_49._popup.options.maxWidth = 300;
+      map.addLayer(marker_49)
+      
+      var marker_50_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_50 = L.marker([37.8684357, 
+							-122.2614604],
+							{'icon':marker_50_icon}
+							);
+      marker_50.bindPopup("2/13/15 23:41<br />Traffic<br />BM3TWN");
+      marker_50._popup.options.maxWidth = 300;
+      map.addLayer(marker_50)
+      
+      var marker_51_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_51 = L.marker([37.8630469, 
+							-122.2603652],
+							{'icon':marker_51_icon}
+							);
+      marker_51.bindPopup("3/1/15 20:38<br />Traffic<br />WM2TWN");
+      marker_51._popup.options.maxWidth = 300;
+      map.addLayer(marker_51)
+      
+      var marker_52_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_52 = L.marker([37.8690594, 
+							-122.2704546],
+							{'icon':marker_52_icon}
+							);
+      marker_52.bindPopup("2/17/15 16:40<br />Pedestrian<br />HM1RWN");
+      marker_52._popup.options.maxWidth = 300;
+      map.addLayer(marker_52)
+      
+      var marker_53_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_53 = L.marker([37.8783265, 
+							-122.3064837],
+							{'icon':marker_53_icon}
+							);
+      marker_53.bindPopup("2/8/15 22:48<br />Traffic<br />WF2TCN");
+      marker_53._popup.options.maxWidth = 300;
+      map.addLayer(marker_53)
+      
+      var marker_54_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_54 = L.marker([37.8651228, 
+							-122.2584226],
+							{'icon':marker_54_icon}
+							);
+      marker_54.bindPopup("1/26/15 14:14<br />Pedestrian<br />WM4RWN");
+      marker_54._popup.options.maxWidth = 300;
+      map.addLayer(marker_54)
+      
+      var marker_55_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_55 = L.marker([37.8676382, 
+							-122.2987604],
+							{'icon':marker_55_icon}
+							);
+      marker_55.bindPopup("2/16/15 14:08<br />Traffic<br />WM4TCN");
+      marker_55._popup.options.maxWidth = 300;
+      map.addLayer(marker_55)
+      
+      var marker_56_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_56 = L.marker([37.8614007, 
+							-122.2589916],
+							{'icon':marker_56_icon}
+							);
+      marker_56.bindPopup("3/3/15 13:16<br />Traffic<br />WM2TCN");
+      marker_56._popup.options.maxWidth = 300;
+      map.addLayer(marker_56)
+      
+      var marker_57_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_57 = L.marker([37.853523, 
+							-122.2556621],
+							{'icon':marker_57_icon}
+							);
+      marker_57.bindPopup("2/9/15 10:53<br />Traffic<br />WM4TWN");
+      marker_57._popup.options.maxWidth = 300;
+      map.addLayer(marker_57)
+      
+      var marker_58_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_58 = L.marker([37.8734354, 
+							-122.2935944],
+							{'icon':marker_58_icon}
+							);
+      marker_58.bindPopup("2/17/15 10:55<br />Traffic<br />WF2TCN");
+      marker_58._popup.options.maxWidth = 300;
+      map.addLayer(marker_58)
+      
+      var marker_59_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_59 = L.marker([37.8651475, 
+							-122.265459],
+							{'icon':marker_59_icon}
+							);
+      marker_59.bindPopup("2/7/15 0:49<br />Traffic<br />BM2TWS");
+      marker_59._popup.options.maxWidth = 300;
+      map.addLayer(marker_59)
+      
+      var marker_60_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_60 = L.marker([37.8678749, 
+							-122.2700495],
+							{'icon':marker_60_icon}
+							);
+      marker_60.bindPopup("2/24/15 17:02<br />Pedestrian<br />WM2RCN");
+      marker_60._popup.options.maxWidth = 300;
+      map.addLayer(marker_60)
+      
+      var marker_61_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_61 = L.marker([37.85336, 
+							-122.2641476],
+							{'icon':marker_61_icon}
+							);
+      marker_61.bindPopup("1/29/15 0:45<br />Bicycle<br />P");
+      marker_61._popup.options.maxWidth = 300;
+      map.addLayer(marker_61)
+      
+      var marker_62_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_62 = L.marker([37.8658022, 
+							-122.2675057],
+							{'icon':marker_62_icon}
+							);
+      marker_62.bindPopup("2/25/15 23:15<br />Traffic<br />OF2TWN");
+      marker_62._popup.options.maxWidth = 300;
+      map.addLayer(marker_62)
+      
+      var marker_63_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_63 = L.marker([37.8675985, 
+							-122.2676968],
+							{'icon':marker_63_icon}
+							);
+      marker_63.bindPopup("2/27/15 22:51<br />Traffic<br />BM2TWN");
+      marker_63._popup.options.maxWidth = 300;
+      map.addLayer(marker_63)
+      
+      var marker_64_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_64 = L.marker([37.868032, 
+							-122.2977077],
+							{'icon':marker_64_icon}
+							);
+      marker_64.bindPopup("2/13/15 14:23<br />Traffic<br />WF4TCN");
+      marker_64._popup.options.maxWidth = 300;
+      map.addLayer(marker_64)
+      
+      var marker_65_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_65 = L.marker([37.8469315, 
+							-122.2850582],
+							{'icon':marker_65_icon}
+							);
+      marker_65.bindPopup("2/25/15 2:05<br />Suspicious Vehicle<br />BM2TWS");
+      marker_65._popup.options.maxWidth = 300;
+      map.addLayer(marker_65)
+      
+      var marker_66_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_66 = L.marker([37.8684184, 
+							-122.3025391],
+							{'icon':marker_66_icon}
+							);
+      marker_66.bindPopup("2/22/15 19:45<br />Pedestrian<br />0");
+      marker_66._popup.options.maxWidth = 300;
+      map.addLayer(marker_66)
+      
+      var marker_67_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_67 = L.marker([37.8710274, 
+							-122.2748372],
+							{'icon':marker_67_icon}
+							);
+      marker_67.bindPopup("2/4/15 6:50<br />Pedestrian<br />WM3RCN");
+      marker_67._popup.options.maxWidth = 300;
+      map.addLayer(marker_67)
+      
+      var marker_68_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_68 = L.marker([37.8692063, 
+							-122.2692936],
+							{'icon':marker_68_icon}
+							);
+      marker_68.bindPopup("2/8/15 16:36<br />Traffic<br />WM2TWN");
+      marker_68._popup.options.maxWidth = 300;
+      map.addLayer(marker_68)
+      
+      var marker_69_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_69 = L.marker([37.8734354, 
+							-122.2935944],
+							{'icon':marker_69_icon}
+							);
+      marker_69.bindPopup("2/15/15 21:55<br />Traffic<br />M");
+      marker_69._popup.options.maxWidth = 300;
+      map.addLayer(marker_69)
+      
+      var marker_70_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_70 = L.marker([37.8697709, 
+							-122.2865385],
+							{'icon':marker_70_icon}
+							);
+      marker_70.bindPopup("2/22/15 23:39<br />Traffic<br />HM3TWN");
+      marker_70._popup.options.maxWidth = 300;
+      map.addLayer(marker_70)
+      
+      var marker_71_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_71 = L.marker([37.8702602, 
+							-122.2731962],
+							{'icon':marker_71_icon}
+							);
+      marker_71.bindPopup("2/8/15 15:16<br />Pedestrian<br />MH");
+      marker_71._popup.options.maxWidth = 300;
+      map.addLayer(marker_71)
+      
+      var marker_72_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_72 = L.marker([37.8621859, 
+							-122.2811937],
+							{'icon':marker_72_icon}
+							);
+      marker_72.bindPopup("3/7/15 21:04<br />Traffic<br />HM2TWN");
+      marker_72._popup.options.maxWidth = 300;
+      map.addLayer(marker_72)
+      
+      var marker_73_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_73 = L.marker([37.8584799, 
+							-122.2531821],
+							{'icon':marker_73_icon}
+							);
+      marker_73.bindPopup("2/13/15 18:50<br />Bicycle<br />WM4IWS");
+      marker_73._popup.options.maxWidth = 300;
+      map.addLayer(marker_73)
+      
+      var marker_74_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_74 = L.marker([37.8654206, 
+							-122.2561427],
+							{'icon':marker_74_icon}
+							);
+      marker_74.bindPopup("2/3/15 13:08<br />Pedestrian<br />WF2RCN, M");
+      marker_74._popup.options.maxWidth = 300;
+      map.addLayer(marker_74)
+      
+      var marker_75_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_75 = L.marker([37.86246, 
+							-122.2719957],
+							{'icon':marker_75_icon}
+							);
+      marker_75.bindPopup("1/27/15 2:01<br />Traffic<br />WM2RON");
+      marker_75._popup.options.maxWidth = 300;
+      map.addLayer(marker_75)
+      
+      var marker_76_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_76 = L.marker([37.8705876, 
+							-122.272894],
+							{'icon':marker_76_icon}
+							);
+      marker_76.bindPopup("2/19/15 16:01<br />Traffic<br />BM1TWN");
+      marker_76._popup.options.maxWidth = 300;
+      map.addLayer(marker_76)
+      
+      var marker_77_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_77 = L.marker([37.8670261, 
+							-122.2999613],
+							{'icon':marker_77_icon}
+							);
+      marker_77.bindPopup("2/22/15 19:48<br />Traffic<br />BF4TWN");
+      marker_77._popup.options.maxWidth = 300;
+      map.addLayer(marker_77)
+      
+      var marker_78_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_78 = L.marker([37.8648307, 
+							-122.2989737],
+							{'icon':marker_78_icon}
+							);
+      marker_78.bindPopup("2/15/15 23:01<br />Suspicious Vehicle<br />WM4IWN");
+      marker_78._popup.options.maxWidth = 300;
+      map.addLayer(marker_78)
+      
+      var marker_79_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_79 = L.marker([37.8525446, 
+							-122.2633033],
+							{'icon':marker_79_icon}
+							);
+      marker_79.bindPopup("3/7/15 20:13<br />Traffic<br />WM3TWN");
+      marker_79._popup.options.maxWidth = 300;
+      map.addLayer(marker_79)
+      
+      var marker_80_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_80 = L.marker([37.8458744, 
+							-122.2652523],
+							{'icon':marker_80_icon}
+							);
+      marker_80.bindPopup("2/15/15 20:04<br />Traffic<br />BM4TWN");
+      marker_80._popup.options.maxWidth = 300;
+      map.addLayer(marker_80)
+      
+      var marker_81_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_81 = L.marker([37.8665832, 
+							-122.2913846],
+							{'icon':marker_81_icon}
+							);
+      marker_81.bindPopup("2/15/15 20:51<br />Traffic<br />WM1TWS");
+      marker_81._popup.options.maxWidth = 300;
+      map.addLayer(marker_81)
+      
+      var marker_82_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_82 = L.marker([37.8506846, 
+							-122.2706115],
+							{'icon':marker_82_icon}
+							);
+      marker_82.bindPopup("2/5/15 13:56<br />Traffic<br />M");
+      marker_82._popup.options.maxWidth = 300;
+      map.addLayer(marker_82)
+      
+      var marker_83_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_83 = L.marker([37.8723917, 
+							-122.2661629],
+							{'icon':marker_83_icon}
+							);
+      marker_83.bindPopup("3/7/15 0:28<br />Traffic<br />AF2TWN");
+      marker_83._popup.options.maxWidth = 300;
+      map.addLayer(marker_83)
+      
+      var marker_84_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_84 = L.marker([37.8715926, 
+							-122.272747],
+							{'icon':marker_84_icon}
+							);
+      marker_84.bindPopup("2/10/15 15:10<br />Traffic<br />WM2TCN");
+      marker_84._popup.options.maxWidth = 300;
+      map.addLayer(marker_84)
+      
+      var marker_85_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_85 = L.marker([37.8615268, 
+							-122.2511624],
+							{'icon':marker_85_icon}
+							);
+      marker_85.bindPopup("2/4/15 11:17<br />Traffic<br />WF4TCN");
+      marker_85._popup.options.maxWidth = 300;
+      map.addLayer(marker_85)
+      
+      var marker_86_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_86 = L.marker([37.8731719, 
+							-122.293804],
+							{'icon':marker_86_icon}
+							);
+      marker_86.bindPopup("2/18/15 12:28<br />Pedestrian<br />OF4RWN, BF4RWN, BM4RWN");
+      marker_86._popup.options.maxWidth = 300;
+      map.addLayer(marker_86)
+      
+      var marker_87_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_87 = L.marker([37.8789319, 
+							-122.3035092],
+							{'icon':marker_87_icon}
+							);
+      marker_87.bindPopup("2/22/15 22:18<br />Traffic<br />BM3IWS");
+      marker_87._popup.options.maxWidth = 300;
+      map.addLayer(marker_87)
+      
+      var marker_88_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_88 = L.marker([37.8708687, 
+							-122.2706451],
+							{'icon':marker_88_icon}
+							);
+      marker_88.bindPopup("2/2/15 18:27<br />Traffic<br />HF3TCN");
+      marker_88._popup.options.maxWidth = 300;
+      map.addLayer(marker_88)
+      
+      var marker_89_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_89 = L.marker([37.8649541, 
+							-122.2589126],
+							{'icon':marker_89_icon}
+							);
+      marker_89.bindPopup("2/23/15 17:47<br />Pedestrian<br />M");
+      marker_89._popup.options.maxWidth = 300;
+      map.addLayer(marker_89)
+      
+      var marker_90_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_90 = L.marker([37.8715926, 
+							-122.272747],
+							{'icon':marker_90_icon}
+							);
+      marker_90.bindPopup("2/11/15 18:47<br />Traffic<br />BM4TAS");
+      marker_90._popup.options.maxWidth = 300;
+      map.addLayer(marker_90)
+      
+      var marker_91_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_91 = L.marker([37.8692972, 
+							-122.2546034],
+							{'icon':marker_91_icon}
+							);
+      marker_91.bindPopup("2/4/15 12:46<br />Traffic<br />WM2TCN");
+      marker_91._popup.options.maxWidth = 300;
+      map.addLayer(marker_91)
+      
+      var marker_92_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_92 = L.marker([37.8669897, 
+							-122.2725025],
+							{'icon':marker_92_icon}
+							);
+      marker_92.bindPopup("3/8/15 1:23<br />Traffic<br />BM2TWN");
+      marker_92._popup.options.maxWidth = 300;
+      map.addLayer(marker_92)
+      
+      var marker_93_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_93 = L.marker([37.8544226, 
+							-122.2700067],
+							{'icon':marker_93_icon}
+							);
+      marker_93.bindPopup("2/4/15 23:11<br />Traffic<br />HM3TWN");
+      marker_93._popup.options.maxWidth = 300;
+      map.addLayer(marker_93)
+      
+      var marker_94_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_94 = L.marker([37.8615405, 
+							-122.2718902],
+							{'icon':marker_94_icon}
+							);
+      marker_94.bindPopup("2/2/15 6:01<br />Traffic<br />BF3TCN");
+      marker_94._popup.options.maxWidth = 300;
+      map.addLayer(marker_94)
+      
+      var marker_95_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_95 = L.marker([37.866914, 
+							-122.2587858],
+							{'icon':marker_95_icon}
+							);
+      marker_95.bindPopup("1/30/15 23:49<br />Traffic<br />AF1TWN");
+      marker_95._popup.options.maxWidth = 300;
+      map.addLayer(marker_95)
+      
+      var marker_96_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_96 = L.marker([37.8715926, 
+							-122.272747],
+							{'icon':marker_96_icon}
+							);
+      marker_96.bindPopup("2/19/15 9:18<br />Traffic<br />WM3TCN");
+      marker_96._popup.options.maxWidth = 300;
+      map.addLayer(marker_96)
+      
+      var marker_97_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_97 = L.marker([37.8712769, 
+							-122.2931212],
+							{'icon':marker_97_icon}
+							);
+      marker_97.bindPopup("2/16/15 7:29<br />Pedestrian<br />BM4RWN");
+      marker_97._popup.options.maxWidth = 300;
+      map.addLayer(marker_97)
+      
+      var marker_98_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_98 = L.marker([37.8805159, 
+							-122.2670654],
+							{'icon':marker_98_icon}
+							);
+      marker_98.bindPopup("1/28/15 18:04<br />Pedestrian<br />BM2ICS");
+      marker_98._popup.options.maxWidth = 300;
+      map.addLayer(marker_98)
+      
+      var marker_99_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_99 = L.marker([37.8538875, 
+							-122.2527361],
+							{'icon':marker_99_icon}
+							);
+      marker_99.bindPopup("1/27/15 8:09<br />Traffic<br />OM2TCN");
+      marker_99._popup.options.maxWidth = 300;
+      map.addLayer(marker_99)
+      
+      var marker_100_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
+      var marker_100 = L.marker([37.8663329, 
+							-122.263353],
+							{'icon':marker_100_icon}
+							);
+      marker_100.bindPopup("2/4/15 20:07<br />Pedestrian<br />MH");
+      marker_100._popup.options.maxWidth = 300;
+      map.addLayer(marker_100)
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+
+
+   </script>
+
+</body>
