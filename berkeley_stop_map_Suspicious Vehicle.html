@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+   <link rel="stylesheet" href="https://rawgit.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.css">
+   <script src="https://rawgithub.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.js"></script>
+
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+
+   <link rel="stylesheet" href="https://birdage.github.io/Leaflet.awesome-markers/dist/leaflet.awesome.rotate.css">
+
+   
+   
+   
+   
+
+   <style>
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position:absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+      }
+
+   </style>
+</head>
+
+<body>
+
+   <div class="folium-map" id="folium_fbbcf6222247467f9ab8492735cff4c6" style="width: 100%; height: 100%"></div>
+
+   <script>
+
+      
+
+      var base_tile = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg', {
+          maxZoom: 18,
+          minZoom: 1,
+          attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
+      });
+
+      var baseLayer = {
+        "Base Layer": base_tile
+      };
+
+      /*
+      addition of the wms layers
+      */
+
+      
+
+      /*
+      addition of the tile layers
+      */
+      
+
+      /*
+      list of layers to be added
+      */
+      var layer_list = {
+      
+      };
+
+      /*
+      Bounding box.
+      */
+      var southWest = L.latLng(-90, -180),
+          northEast = L.latLng(90, 180),
+          bounds = L.latLngBounds(southWest, northEast);
+
+      /*
+      Creates the map and adds the selected layers
+      */
+      var map = L.map('folium_fbbcf6222247467f9ab8492735cff4c6', {
+                                       center:[37.87, -122.259],
+                                       zoom: 14,
+                                       maxBounds: bounds,
+                                       layers: [base_tile]
+                                     });
+
+      L.control.layers(baseLayer, layer_list).addTo(map);
+
+      //cluster group
+      var clusteredmarkers = L.markerClusterGroup();
+      //section for adding clustered markers
+      
+      //add the clustered markers to the group anyway
+      map.addLayer(clusteredmarkers);
+
+      
+
+      
+      var circle_1 = L.circle([37.8408391, -122.2831], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_1.bindPopup("1/27/15 1:03<br />Suspicious Vehicle<br />BM2TWS");
+      circle_1._popup.options.maxWidth = 300;
+      map.addLayer(circle_1)
+      
+      var circle_2 = L.circle([37.8669858, -122.284767], 20, {
+                            color: '#8C564B',
+                            fillColor: '#8C564B',
+                            fillOpacity: 0.6
+                            });
+      circle_2.bindPopup("1/28/15 20:18<br />Suspicious Vehicle<br />OM3WAN");
+      circle_2._popup.options.maxWidth = 300;
+      map.addLayer(circle_2)
+      
+      var circle_3 = L.circle([37.870206, -122.292806], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_3.bindPopup("1/29/15 19:34<br />Suspicious Vehicle<br />BM4TWN");
+      circle_3._popup.options.maxWidth = 300;
+      map.addLayer(circle_3)
+      
+      var circle_4 = L.circle([37.8548384, -122.2791193], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_4.bindPopup("1/29/15 23:17<br />Suspicious Vehicle<br />BM2TWN");
+      circle_4._popup.options.maxWidth = 300;
+      map.addLayer(circle_4)
+      
+      var circle_5 = L.circle([37.8647719, -122.2896243], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_5.bindPopup("1/30/15 23:17<br />Suspicious Vehicle<br />BM2ICS");
+      circle_5._popup.options.maxWidth = 300;
+      map.addLayer(circle_5)
+      
+      var circle_6 = L.circle([37.8648428, -122.3018392], 20, {
+                            color: '#1F77B4',
+                            fillColor: '#1F77B4',
+                            fillOpacity: 0.6
+                            });
+      circle_6.bindPopup("2/1/15 2:50<br />Suspicious Vehicle<br />AM3RWN");
+      circle_6._popup.options.maxWidth = 300;
+      map.addLayer(circle_6)
+      
+      var circle_7 = L.circle([37.8612545, -122.2671221], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_7.bindPopup("2/1/15 22:59<br />Suspicious Vehicle<br />WM4TWN");
+      circle_7._popup.options.maxWidth = 300;
+      map.addLayer(circle_7)
+      
+      var circle_8 = L.circle([37.8588865, -122.2912479], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_8.bindPopup("2/3/15 8:11<br />Suspicious Vehicle<br />WM4TON");
+      circle_8._popup.options.maxWidth = 300;
+      map.addLayer(circle_8)
+      
+      var circle_9 = L.circle([37.862888, -122.274598], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_9.bindPopup("2/3/15 19:00<br />Suspicious Vehicle<br />WF4KAS, P");
+      circle_9._popup.options.maxWidth = 300;
+      map.addLayer(circle_9)
+      
+      var circle_10 = L.circle([37.8687287, -122.2591604], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_10.bindPopup("2/3/15 21:27<br />Suspicious Vehicle<br />BM2TCS, M");
+      circle_10._popup.options.maxWidth = 300;
+      map.addLayer(circle_10)
+      
+      var circle_11 = L.circle([37.8502165, -122.2666958], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_11.bindPopup("2/4/15 18:12<br />Suspicious Vehicle<br />BM4KAS, P");
+      circle_11._popup.options.maxWidth = 300;
+      map.addLayer(circle_11)
+      
+      var circle_12 = L.circle([37.8665832, -122.2913846], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_12.bindPopup("2/4/15 23:59<br />Suspicious Vehicle<br />BM4TWS");
+      circle_12._popup.options.maxWidth = 300;
+      map.addLayer(circle_12)
+      
+      var circle_13 = L.circle([37.8788599, -122.3068767], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_13.bindPopup("2/7/15 0:33<br />Suspicious Vehicle<br />HF2TWN");
+      circle_13._popup.options.maxWidth = 300;
+      map.addLayer(circle_13)
+      
+      var circle_14 = L.circle([37.8687416, -122.2873127], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_14.bindPopup("2/7/15 18:48<br />Suspicious Vehicle<br />WM4TWN");
+      circle_14._popup.options.maxWidth = 300;
+      map.addLayer(circle_14)
+      
+      var circle_15 = L.circle([37.8529677, -122.2601833], 20, {
+                            color: '#1F77B4',
+                            fillColor: '#1F77B4',
+                            fillOpacity: 0.6
+                            });
+      circle_15.bindPopup("2/8/15 0:47<br />Suspicious Vehicle<br />AM2TWN");
+      circle_15._popup.options.maxWidth = 300;
+      map.addLayer(circle_15)
+      
+      var circle_16 = L.circle([37.8450363, -122.2790134], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_16.bindPopup("2/11/15 15:18<br />Suspicious Vehicle<br />BM4IWS, M");
+      circle_16._popup.options.maxWidth = 300;
+      map.addLayer(circle_16)
+      
+      var circle_17 = L.circle([37.8742336, -122.2653637], 20, {
+                            color: '#1F77B4',
+                            fillColor: '#1F77B4',
+                            fillOpacity: 0.6
+                            });
+      circle_17.bindPopup("2/12/15 7:58<br />Suspicious Vehicle<br />AF4WAN");
+      circle_17._popup.options.maxWidth = 300;
+      map.addLayer(circle_17)
+      
+      var circle_18 = L.circle([37.8682101, -122.2611743], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_18.bindPopup("2/12/15 21:07<br />Suspicious Vehicle<br />BM4TWN");
+      circle_18._popup.options.maxWidth = 300;
+      map.addLayer(circle_18)
+      
+      var circle_19 = L.circle([37.8675876, -122.2928899], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_19.bindPopup("2/13/15 0:47<br />Suspicious Vehicle<br />BM4TWS");
+      circle_19._popup.options.maxWidth = 300;
+      map.addLayer(circle_19)
+      
+      var circle_20 = L.circle([37.8648428, -122.3018392], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_20.bindPopup("2/13/15 3:18<br />Suspicious Vehicle<br />WF2IWN");
+      circle_20._popup.options.maxWidth = 300;
+      map.addLayer(circle_20)
+      
+      var circle_21 = L.circle([37.8705202, -122.2975569], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_21.bindPopup("2/13/15 23:40<br />Suspicious Vehicle<br />BM2IWN");
+      circle_21._popup.options.maxWidth = 300;
+      map.addLayer(circle_21)
+      
+      var circle_22 = L.circle([37.87036652, -122.3184163], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_22.bindPopup("2/15/15 22:42<br />Suspicious Vehicle<br />BF2IWN");
+      circle_22._popup.options.maxWidth = 300;
+      map.addLayer(circle_22)
+      
+      var circle_23 = L.circle([37.8648307, -122.2989737], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_23.bindPopup("2/15/15 23:01<br />Suspicious Vehicle<br />WM4IWN");
+      circle_23._popup.options.maxWidth = 300;
+      map.addLayer(circle_23)
+      
+      var circle_24 = L.circle([37.8744883, -122.2965121], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_24.bindPopup("2/17/15 4:06<br />Suspicious Vehicle<br />BM3TWS");
+      circle_24._popup.options.maxWidth = 300;
+      map.addLayer(circle_24)
+      
+      var circle_25 = L.circle([37.8392721, -122.2762853], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_25.bindPopup("2/17/15 16:21<br />Suspicious Vehicle<br />BF4TWS");
+      circle_25._popup.options.maxWidth = 300;
+      map.addLayer(circle_25)
+      
+      var circle_26 = L.circle([37.861318, -122.2878918], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_26.bindPopup("2/20/15 3:13<br />Suspicious Vehicle<br />WF4IWN");
+      circle_26._popup.options.maxWidth = 300;
+      map.addLayer(circle_26)
+      
+      var circle_27 = L.circle([37.8714408, -122.303515], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_27.bindPopup("2/22/15 19:38<br />Suspicious Vehicle<br />WM4IWN");
+      circle_27._popup.options.maxWidth = 300;
+      map.addLayer(circle_27)
+      
+      var circle_28 = L.circle([37.8662875, -122.3054876], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_28.bindPopup("2/23/15 5:35<br />Suspicious Vehicle<br />WM3IWN");
+      circle_28._popup.options.maxWidth = 300;
+      map.addLayer(circle_28)
+      
+      var circle_29 = L.circle([37.8716087, -122.2730269], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_29.bindPopup("2/24/15 0:08<br />Suspicious Vehicle<br />WM2TWN");
+      circle_29._popup.options.maxWidth = 300;
+      map.addLayer(circle_29)
+      
+      var circle_30 = L.circle([37.8469315, -122.2850582], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_30.bindPopup("2/24/15 1:53<br />Suspicious Vehicle<br />WF3TWN");
+      circle_30._popup.options.maxWidth = 300;
+      map.addLayer(circle_30)
+      
+      var circle_31 = L.circle([37.8632835, -122.2973655], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_31.bindPopup("2/24/15 14:35<br />Suspicious Vehicle<br />BM4RWS, M");
+      circle_31._popup.options.maxWidth = 300;
+      map.addLayer(circle_31)
+      
+      var circle_32 = L.circle([37.8664737, -122.2983845], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_32.bindPopup("2/25/15 0:53<br />Suspicious Vehicle<br />BM2TWS");
+      circle_32._popup.options.maxWidth = 300;
+      map.addLayer(circle_32)
+      
+      var circle_33 = L.circle([37.8716761, -122.2930211], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_33.bindPopup("2/25/15 1:16<br />Suspicious Vehicle<br />HM2TWS");
+      circle_33._popup.options.maxWidth = 300;
+      map.addLayer(circle_33)
+      
+      var circle_34 = L.circle([37.8469315, -122.2850582], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_34.bindPopup("2/25/15 2:05<br />Suspicious Vehicle<br />BM2TWS");
+      circle_34._popup.options.maxWidth = 300;
+      map.addLayer(circle_34)
+      
+      var circle_35 = L.circle([37.8506846, -122.2706115], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_35.bindPopup("2/27/15 20:44<br />Suspicious Vehicle<br />BM2IWN");
+      circle_35._popup.options.maxWidth = 300;
+      map.addLayer(circle_35)
+      
+      var circle_36 = L.circle([37.866914, -122.2587858], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_36.bindPopup("2/28/15 15:03<br />Suspicious Vehicle<br />HF2RWS, HM2RWS");
+      circle_36._popup.options.maxWidth = 300;
+      map.addLayer(circle_36)
+      
+      var circle_37 = L.circle([37.8715824, -122.3016114], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_37.bindPopup("3/1/15 1:30<br />Suspicious Vehicle<br />HM2WAN");
+      circle_37._popup.options.maxWidth = 300;
+      map.addLayer(circle_37)
+      
+      var circle_38 = L.circle([37.86040747, -122.2991895], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_38.bindPopup("3/2/15 1:09<br />Suspicious Vehicle<br />BM2RCN");
+      circle_38._popup.options.maxWidth = 300;
+      map.addLayer(circle_38)
+      
+      var circle_39 = L.circle([37.8928962, -122.2882908], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_39.bindPopup("3/2/15 1:14<br />Suspicious Vehicle<br />WM4IWN");
+      circle_39._popup.options.maxWidth = 300;
+      map.addLayer(circle_39)
+      
+      var circle_40 = L.circle([37.8776216, -122.3007614], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_40.bindPopup("3/3/15 14:36<br />Suspicious Vehicle<br />BM4TAS");
+      circle_40._popup.options.maxWidth = 300;
+      map.addLayer(circle_40)
+      
+      var circle_41 = L.circle([37.86040747, -122.2991895], 20, {
+                            color: '#8C564B',
+                            fillColor: '#8C564B',
+                            fillOpacity: 0.6
+                            });
+      circle_41.bindPopup("3/5/15 2:27<br />Suspicious Vehicle<br />OM2IWN");
+      circle_41._popup.options.maxWidth = 300;
+      map.addLayer(circle_41)
+      
+      var circle_42 = L.circle([37.8496535, -122.2922964], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_42.bindPopup("3/6/15 12:35<br />Suspicious Vehicle<br />HM4TCN");
+      circle_42._popup.options.maxWidth = 300;
+      map.addLayer(circle_42)
+      
+      var circle_43 = L.circle([37.8488219, -122.2780332], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_43.bindPopup("3/6/15 23:19<br />Suspicious Vehicle<br />BM3TWN");
+      circle_43._popup.options.maxWidth = 300;
+      map.addLayer(circle_43)
+      
+      var circle_44 = L.circle([37.8783265, -122.3064837], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_44.bindPopup("3/8/15 3:24<br />Suspicious Vehicle<br />BM3IWN");
+      circle_44._popup.options.maxWidth = 300;
+      map.addLayer(circle_44)
+      
+      var circle_45 = L.circle([37.855922, -122.2727862], 20, {
+                            color: '#8C564B',
+                            fillColor: '#8C564B',
+                            fillOpacity: 0.6
+                            });
+      circle_45.bindPopup("3/11/15 0:28<br />Suspicious Vehicle<br />OM1IWS, WM1IWS");
+      circle_45._popup.options.maxWidth = 300;
+      map.addLayer(circle_45)
+      
+      var circle_46 = L.circle([37.851927, -122.2834521], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_46.bindPopup("3/11/15 17:29<br />Suspicious Vehicle<br />BM3TWS");
+      circle_46._popup.options.maxWidth = 300;
+      map.addLayer(circle_46)
+      
+      var circle_47 = L.circle([37.8687287, -122.2591604], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_47.bindPopup("3/13/15 1:08<br />Suspicious Vehicle<br />HM2TCN");
+      circle_47._popup.options.maxWidth = 300;
+      map.addLayer(circle_47)
+      
+      var circle_48 = L.circle([37.8750481, -122.3011577], 20, {
+                            color: '#8C564B',
+                            fillColor: '#8C564B',
+                            fillOpacity: 0.6
+                            });
+      circle_48.bindPopup("3/15/15 3:26<br />Suspicious Vehicle<br />OM2IWN");
+      circle_48._popup.options.maxWidth = 300;
+      map.addLayer(circle_48)
+      
+      var circle_49 = L.circle([37.8714651, -122.2987757], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_49.bindPopup("3/15/15 20:56<br />Suspicious Vehicle<br />BM3IWS");
+      circle_49._popup.options.maxWidth = 300;
+      map.addLayer(circle_49)
+      
+      var circle_50 = L.circle([37.8532935, -122.2789409], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_50.bindPopup("3/16/15 9:40<br />Suspicious Vehicle<br />WM4IWN");
+      circle_50._popup.options.maxWidth = 300;
+      map.addLayer(circle_50)
+      
+      var circle_51 = L.circle([37.8669347, -122.2869532], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_51.bindPopup("3/17/15 13:36<br />Suspicious Vehicle<br />BM4TCS");
+      circle_51._popup.options.maxWidth = 300;
+      map.addLayer(circle_51)
+      
+      var circle_52 = L.circle([37.8714494, -122.2856019], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_52.bindPopup("3/17/15 23:26<br />Suspicious Vehicle<br />WM3IWN, M");
+      circle_52._popup.options.maxWidth = 300;
+      map.addLayer(circle_52)
+      
+      var circle_53 = L.circle([37.8715113, -122.2730161], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_53.bindPopup("3/17/15 23:45<br />Suspicious Vehicle<br />BM3RWN");
+      circle_53._popup.options.maxWidth = 300;
+      map.addLayer(circle_53)
+      
+      var circle_54 = L.circle([37.8665832, -122.2913846], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_54.bindPopup("3/18/15 15:29<br />Suspicious Vehicle<br />BM3KWS");
+      circle_54._popup.options.maxWidth = 300;
+      map.addLayer(circle_54)
+      
+      var circle_55 = L.circle([37.8426102, -122.2788509], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_55.bindPopup("3/18/15 16:03<br />Suspicious Vehicle<br />HM3TWN");
+      circle_55._popup.options.maxWidth = 300;
+      map.addLayer(circle_55)
+      
+      var circle_56 = L.circle([37.8519364, -122.2834794], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_56.bindPopup("3/18/15 16:54<br />Suspicious Vehicle<br />BM3TWS");
+      circle_56._popup.options.maxWidth = 300;
+      map.addLayer(circle_56)
+      
+      var circle_57 = L.circle([37.850474, -122.286002], 20, {
+                            color: '#8C564B',
+                            fillColor: '#8C564B',
+                            fillOpacity: 0.6
+                            });
+      circle_57.bindPopup("3/18/15 23:05<br />Suspicious Vehicle<br />OM2RWN");
+      circle_57._popup.options.maxWidth = 300;
+      map.addLayer(circle_57)
+      
+      var circle_58 = L.circle([37.8650396, -122.2979153], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_58.bindPopup("3/19/15 1:35<br />Suspicious Vehicle<br />BM4IWN");
+      circle_58._popup.options.maxWidth = 300;
+      map.addLayer(circle_58)
+      
+      var circle_59 = L.circle([37.8715926, -122.272747], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_59.bindPopup("3/19/15 23:38<br />Suspicious Vehicle<br />BF2RWS");
+      circle_59._popup.options.maxWidth = 300;
+      map.addLayer(circle_59)
+      
+      var circle_60 = L.circle([37.8599811, -122.2950681], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_60.bindPopup("3/20/15 0:16<br />Suspicious Vehicle<br />BM4TWN");
+      circle_60._popup.options.maxWidth = 300;
+      map.addLayer(circle_60)
+      
+      var circle_61 = L.circle([37.866399, -122.306035], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_61.bindPopup("3/22/15 22:37<br />Suspicious Vehicle<br />BM3TWN");
+      circle_61._popup.options.maxWidth = 300;
+      map.addLayer(circle_61)
+      
+      var circle_62 = L.circle([37.8621482, -122.2672083], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_62.bindPopup("3/23/15 3:01<br />Suspicious Vehicle<br />WM2TWN");
+      circle_62._popup.options.maxWidth = 300;
+      map.addLayer(circle_62)
+      
+      var circle_63 = L.circle([37.8687926, -122.2726916], 20, {
+                            color: '#1F77B4',
+                            fillColor: '#1F77B4',
+                            fillOpacity: 0.6
+                            });
+      circle_63.bindPopup("3/24/15 2:31<br />Suspicious Vehicle<br />AF2IWN");
+      circle_63._popup.options.maxWidth = 300;
+      map.addLayer(circle_63)
+      
+      var circle_64 = L.circle([37.8581067, -122.2778224], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_64.bindPopup("3/27/15 19:33<br />Suspicious Vehicle<br />HM2TCS");
+      circle_64._popup.options.maxWidth = 300;
+      map.addLayer(circle_64)
+      
+      var circle_65 = L.circle([37.8555862, -122.2750093], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_65.bindPopup("3/28/15 19:56<br />Suspicious Vehicle<br />BM2TWN");
+      circle_65._popup.options.maxWidth = 300;
+      map.addLayer(circle_65)
+      
+      var circle_66 = L.circle([37.8574976, -122.2908316], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_66.bindPopup("3/28/15 21:01<br />Suspicious Vehicle<br />WF4ION");
+      circle_66._popup.options.maxWidth = 300;
+      map.addLayer(circle_66)
+      
+      var circle_67 = L.circle([37.8618571, -122.2624409], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_67.bindPopup("3/28/15 23:18<br />Suspicious Vehicle<br />WM1RON");
+      circle_67._popup.options.maxWidth = 300;
+      map.addLayer(circle_67)
+      
+      var circle_68 = L.circle([37.89535545, -122.2735837], 20, {
+                            color: '#1F77B4',
+                            fillColor: '#1F77B4',
+                            fillOpacity: 0.6
+                            });
+      circle_68.bindPopup("3/29/15 20:45<br />Suspicious Vehicle<br />AM2RWN");
+      circle_68._popup.options.maxWidth = 300;
+      map.addLayer(circle_68)
+      
+      var circle_69 = L.circle([37.8684756, -122.2893517], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_69.bindPopup("3/31/15 1:37<br />Suspicious Vehicle<br />WF4TWN");
+      circle_69._popup.options.maxWidth = 300;
+      map.addLayer(circle_69)
+      
+      var circle_70 = L.circle([37.8755108, -122.2934063], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_70.bindPopup("4/1/15 3:17<br />Suspicious Vehicle<br />HM2TWN");
+      circle_70._popup.options.maxWidth = 300;
+      map.addLayer(circle_70)
+      
+      var circle_71 = L.circle([37.8702602, -122.2731962], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_71.bindPopup("4/1/15 23:47<br />Suspicious Vehicle<br />BM4IWN");
+      circle_71._popup.options.maxWidth = 300;
+      map.addLayer(circle_71)
+      
+      var circle_72 = L.circle([37.8715926, -122.272747], 20, {
+                            color: '#8C564B',
+                            fillColor: '#8C564B',
+                            fillOpacity: 0.6
+                            });
+      circle_72.bindPopup("4/3/15 21:37<br />Suspicious Vehicle<br />OM2TWN");
+      circle_72._popup.options.maxWidth = 300;
+      map.addLayer(circle_72)
+      
+      var circle_73 = L.circle([37.8715926, -122.272747], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_73.bindPopup("4/4/15 0:54<br />Suspicious Vehicle<br />BM2TWN");
+      circle_73._popup.options.maxWidth = 300;
+      map.addLayer(circle_73)
+      
+      var circle_74 = L.circle([37.8684859, -122.2955316], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_74.bindPopup("4/4/15 3:38<br />Suspicious Vehicle<br />BM4TWN, M");
+      circle_74._popup.options.maxWidth = 300;
+      map.addLayer(circle_74)
+      
+      var circle_75 = L.circle([37.8636799, -122.3180558], 20, {
+                            color: '#8C564B',
+                            fillColor: '#8C564B',
+                            fillOpacity: 0.6
+                            });
+      circle_75.bindPopup("4/5/15 23:18<br />Suspicious Vehicle<br />OM1TWN");
+      circle_75._popup.options.maxWidth = 300;
+      map.addLayer(circle_75)
+      
+      var circle_76 = L.circle([37.8630998, -122.3172833], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_76.bindPopup("4/5/15 23:25<br />Suspicious Vehicle<br />BM3TWN");
+      circle_76._popup.options.maxWidth = 300;
+      map.addLayer(circle_76)
+      
+      var circle_77 = L.circle([37.8715926, -122.272747], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_77.bindPopup("4/6/15 23:43<br />Suspicious Vehicle<br />BM4TWS");
+      circle_77._popup.options.maxWidth = 300;
+      map.addLayer(circle_77)
+      
+      var circle_78 = L.circle([37.8636799, -122.3180558], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_78.bindPopup("4/7/15 17:14<br />Suspicious Vehicle<br />BM3TWN");
+      circle_78._popup.options.maxWidth = 300;
+      map.addLayer(circle_78)
+      
+      var circle_79 = L.circle([37.8665832, -122.2913846], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_79.bindPopup("4/8/15 0:52<br />Suspicious Vehicle<br />BM2TWN");
+      circle_79._popup.options.maxWidth = 300;
+      map.addLayer(circle_79)
+      
+      var circle_80 = L.circle([37.8670261, -122.2999613], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_80.bindPopup("4/9/15 1:37<br />Suspicious Vehicle<br />BM3TWS");
+      circle_80._popup.options.maxWidth = 300;
+      map.addLayer(circle_80)
+      
+      var circle_81 = L.circle([37.8479133, -122.2776885], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_81.bindPopup("4/9/15 3:36<br />Suspicious Vehicle<br />BF2TWN");
+      circle_81._popup.options.maxWidth = 300;
+      map.addLayer(circle_81)
+      
+      var circle_82 = L.circle([37.8648307, -122.2989737], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_82.bindPopup("4/10/15 20:29<br />Suspicious Vehicle<br />HM2RWN");
+      circle_82._popup.options.maxWidth = 300;
+      map.addLayer(circle_82)
+      
+      var circle_83 = L.circle([37.8648428, -122.3018392], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_83.bindPopup("4/10/15 22:38<br />Suspicious Vehicle<br />HM2RWN");
+      circle_83._popup.options.maxWidth = 300;
+      map.addLayer(circle_83)
+      
+      var circle_84 = L.circle([37.8648428, -122.3018392], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_84.bindPopup("4/10/15 22:52<br />Suspicious Vehicle<br />HM2RWS");
+      circle_84._popup.options.maxWidth = 300;
+      map.addLayer(circle_84)
+      
+      var circle_85 = L.circle([37.8511158, -122.2832476], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_85.bindPopup("4/11/15 0:21<br />Suspicious Vehicle<br />BM2TWS");
+      circle_85._popup.options.maxWidth = 300;
+      map.addLayer(circle_85)
+      
+      var circle_86 = L.circle([37.8648428, -122.3018392], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_86.bindPopup("4/11/15 11:59<br />Suspicious Vehicle<br />BM2RWN");
+      circle_86._popup.options.maxWidth = 300;
+      map.addLayer(circle_86)
+      
+      var circle_87 = L.circle([37.8372449, -122.2684411], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_87.bindPopup("4/11/15 22:00<br />Suspicious Vehicle<br />BM3TWN");
+      circle_87._popup.options.maxWidth = 300;
+      map.addLayer(circle_87)
+      
+      var circle_88 = L.circle([37.8648428, -122.3018392], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_88.bindPopup("4/11/15 22:54<br />Suspicious Vehicle<br />BM2TWN");
+      circle_88._popup.options.maxWidth = 300;
+      map.addLayer(circle_88)
+      
+      var circle_89 = L.circle([37.8636799, -122.3180558], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_89.bindPopup("4/12/15 0:38<br />Suspicious Vehicle<br />BM4IWS");
+      circle_89._popup.options.maxWidth = 300;
+      map.addLayer(circle_89)
+      
+      var circle_90 = L.circle([37.8648428, -122.3018392], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_90.bindPopup("4/12/15 22:11<br />Suspicious Vehicle<br />HF2RWN, HM2RWN");
+      circle_90._popup.options.maxWidth = 300;
+      map.addLayer(circle_90)
+      
+      var circle_91 = L.circle([37.8620663, -122.2820997], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_91.bindPopup("4/14/15 17:49<br />Suspicious Vehicle<br />BM4KWN");
+      circle_91._popup.options.maxWidth = 300;
+      map.addLayer(circle_91)
+      
+      var circle_92 = L.circle([37.8502524, -122.2928757], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_92.bindPopup("4/16/15 0:11<br />Suspicious Vehicle<br />BM2RWS");
+      circle_92._popup.options.maxWidth = 300;
+      map.addLayer(circle_92)
+      
+      var circle_93 = L.circle([37.8831092, -122.2542649], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_93.bindPopup("4/16/15 16:37<br />Suspicious Vehicle<br />BM2TWN");
+      circle_93._popup.options.maxWidth = 300;
+      map.addLayer(circle_93)
+      
+      var circle_94 = L.circle([37.8615697, -122.2574583], 20, {
+                            color: '#8C564B',
+                            fillColor: '#8C564B',
+                            fillOpacity: 0.6
+                            });
+      circle_94.bindPopup("4/17/15 4:02<br />Suspicious Vehicle<br />OM2TWN");
+      circle_94._popup.options.maxWidth = 300;
+      map.addLayer(circle_94)
+      
+      var circle_95 = L.circle([37.8636799, -122.3180558], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_95.bindPopup("4/18/15 9:13<br />Suspicious Vehicle<br />BM3TWN, M");
+      circle_95._popup.options.maxWidth = 300;
+      map.addLayer(circle_95)
+      
+      var circle_96 = L.circle([37.866354, -122.310242], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_96.bindPopup("4/18/15 22:30<br />Suspicious Vehicle<br />HF2TWN");
+      circle_96._popup.options.maxWidth = 300;
+      map.addLayer(circle_96)
+      
+      var circle_97 = L.circle([37.8721732, -122.2678009], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_97.bindPopup("4/19/15 3:10<br />Suspicious Vehicle<br />BM4TCN");
+      circle_97._popup.options.maxWidth = 300;
+      map.addLayer(circle_97)
+      
+      var circle_98 = L.circle([37.8636799, -122.3180558], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_98.bindPopup("4/19/15 11:06<br />Suspicious Vehicle<br />BM4TWN");
+      circle_98._popup.options.maxWidth = 300;
+      map.addLayer(circle_98)
+      
+      var circle_99 = L.circle([37.8670013, -122.3020908], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_99.bindPopup("4/19/15 12:22<br />Suspicious Vehicle<br />BM1ROS");
+      circle_99._popup.options.maxWidth = 300;
+      map.addLayer(circle_99)
+      
+      var circle_100 = L.circle([37.8504838, -122.2961557], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_100.bindPopup("4/19/15 23:30<br />Suspicious Vehicle<br />BM4TWN");
+      circle_100._popup.options.maxWidth = 300;
+      map.addLayer(circle_100)
+      
+      var circle_101 = L.circle([37.8580681, -122.2884927], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_101.bindPopup("4/21/15 18:19<br />Suspicious Vehicle<br />BM4TWN");
+      circle_101._popup.options.maxWidth = 300;
+      map.addLayer(circle_101)
+      
+      var circle_102 = L.circle([37.8509635, -122.2862931], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_102.bindPopup("4/21/15 18:30<br />Suspicious Vehicle<br />WM4TWN");
+      circle_102._popup.options.maxWidth = 300;
+      map.addLayer(circle_102)
+      
+      var circle_103 = L.circle([37.8513573, -122.2863521], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_103.bindPopup("4/21/15 18:36<br />Suspicious Vehicle<br />BM4TWS");
+      circle_103._popup.options.maxWidth = 300;
+      map.addLayer(circle_103)
+      
+      var circle_104 = L.circle([37.8633731, -122.286216], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_104.bindPopup("4/22/15 2:47<br />Suspicious Vehicle<br />BM3TCN");
+      circle_104._popup.options.maxWidth = 300;
+      map.addLayer(circle_104)
+      
+      var circle_105 = L.circle([37.8582339, -122.269236], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_105.bindPopup("4/22/15 21:30<br />Suspicious Vehicle<br />WM3IWN");
+      circle_105._popup.options.maxWidth = 300;
+      map.addLayer(circle_105)
+      
+      var circle_106 = L.circle([37.8439619, -122.2770146], 20, {
+                            color: '#8C564B',
+                            fillColor: '#8C564B',
+                            fillOpacity: 0.6
+                            });
+      circle_106.bindPopup("4/25/15 23:50<br />Suspicious Vehicle<br />OM4ICS");
+      circle_106._popup.options.maxWidth = 300;
+      map.addLayer(circle_106)
+      
+      var circle_107 = L.circle([37.4544293, -87.4765411], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_107.bindPopup("4/26/15 22:24<br />Suspicious Vehicle<br />BM4TWS");
+      circle_107._popup.options.maxWidth = 300;
+      map.addLayer(circle_107)
+      
+      var circle_108 = L.circle([37.87036652, -122.3184163], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_108.bindPopup("4/26/15 22:43<br />Suspicious Vehicle<br />HM2IWS");
+      circle_108._popup.options.maxWidth = 300;
+      map.addLayer(circle_108)
+      
+      var circle_109 = L.circle([37.8636799, -122.3180558], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_109.bindPopup("4/26/15 23:13<br />Suspicious Vehicle<br />HF2TWN");
+      circle_109._popup.options.maxWidth = 300;
+      map.addLayer(circle_109)
+      
+      var circle_110 = L.circle([37.898446, -122.267453], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_110.bindPopup("4/27/15 16:44<br />Suspicious Vehicle<br />BM2TWN");
+      circle_110._popup.options.maxWidth = 300;
+      map.addLayer(circle_110)
+      
+      var circle_111 = L.circle([37.8636799, -122.3180558], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_111.bindPopup("4/27/15 17:11<br />Suspicious Vehicle<br />BM3IAN");
+      circle_111._popup.options.maxWidth = 300;
+      map.addLayer(circle_111)
+      
+      var circle_112 = L.circle([37.87967285, -122.3072962], 20, {
+                            color: '#1F77B4',
+                            fillColor: '#1F77B4',
+                            fillOpacity: 0.6
+                            });
+      circle_112.bindPopup("4/27/15 23:27<br />Suspicious Vehicle<br />AF2IWN, AM2IWN");
+      circle_112._popup.options.maxWidth = 300;
+      map.addLayer(circle_112)
+      
+      var circle_113 = L.circle([37.8568312, -122.2882422], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_113.bindPopup("4/28/15 19:43<br />Suspicious Vehicle<br />BM2TWN, M");
+      circle_113._popup.options.maxWidth = 300;
+      map.addLayer(circle_113)
+      
+      var circle_114 = L.circle([37.8693997, -122.2678732], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_114.bindPopup("5/2/15 23:00<br />Suspicious Vehicle<br />WM2TWN");
+      circle_114._popup.options.maxWidth = 300;
+      map.addLayer(circle_114)
+      
+      var circle_115 = L.circle([37.8749926, -122.2952655], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_115.bindPopup("5/8/15 11:33<br />Suspicious Vehicle<br />HM2TCN");
+      circle_115._popup.options.maxWidth = 300;
+      map.addLayer(circle_115)
+      
+      var circle_116 = L.circle([37.8651464, -122.311247], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_116.bindPopup("5/8/15 19:44<br />Suspicious Vehicle<br />HM3TCS");
+      circle_116._popup.options.maxWidth = 300;
+      map.addLayer(circle_116)
+      
+      var circle_117 = L.circle([37.8655263, -122.2957456], 20, {
+                            color: '#8C564B',
+                            fillColor: '#8C564B',
+                            fillOpacity: 0.6
+                            });
+      circle_117.bindPopup("5/8/15 21:08<br />Suspicious Vehicle<br />OM2TWN");
+      circle_117._popup.options.maxWidth = 300;
+      map.addLayer(circle_117)
+      
+      var circle_118 = L.circle([37.8665065, -122.2974993], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_118.bindPopup("5/11/15 2:58<br />Suspicious Vehicle<br />WM3TWN");
+      circle_118._popup.options.maxWidth = 300;
+      map.addLayer(circle_118)
+      
+      var circle_119 = L.circle([37.86807, -122.2783559], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_119.bindPopup("5/11/15 12:00<br />Suspicious Vehicle<br />BF1TOS");
+      circle_119._popup.options.maxWidth = 300;
+      map.addLayer(circle_119)
+      
+      var circle_120 = L.circle([37.8654073, -122.2561297], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_120.bindPopup("5/11/15 19:28<br />Suspicious Vehicle<br />BM4RCS");
+      circle_120._popup.options.maxWidth = 300;
+      map.addLayer(circle_120)
+      
+      var circle_121 = L.circle([37.8578354, -122.279892], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_121.bindPopup("5/12/15 10:31<br />Suspicious Vehicle<br />BM3RWS, M");
+      circle_121._popup.options.maxWidth = 300;
+      map.addLayer(circle_121)
+      
+      var circle_122 = L.circle([37.8525446, -122.2633033], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_122.bindPopup("5/12/15 18:30<br />Suspicious Vehicle<br />WM4TWN");
+      circle_122._popup.options.maxWidth = 300;
+      map.addLayer(circle_122)
+      
+      var circle_123 = L.circle([37.8542763, -122.2684447], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_123.bindPopup("5/13/15 16:56<br />Suspicious Vehicle<br />BF4TWN");
+      circle_123._popup.options.maxWidth = 300;
+      map.addLayer(circle_123)
+      
+      var circle_124 = L.circle([37.852408, -122.278734], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_124.bindPopup("5/14/15 15:16<br />Suspicious Vehicle<br />BM4KWS");
+      circle_124._popup.options.maxWidth = 300;
+      map.addLayer(circle_124)
+      
+      var circle_125 = L.circle([37.8604947, -122.2804399], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_125.bindPopup("5/14/15 15:47<br />Suspicious Vehicle<br />BM4TWS");
+      circle_125._popup.options.maxWidth = 300;
+      map.addLayer(circle_125)
+      
+      var circle_126 = L.circle([37.8732056, -122.3040794], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_126.bindPopup("5/15/15 20:40<br />Suspicious Vehicle<br />BM4TWN");
+      circle_126._popup.options.maxWidth = 300;
+      map.addLayer(circle_126)
+      
+      var circle_127 = L.circle([37.8406803, -122.2765693], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_127.bindPopup("5/15/15 20:45<br />Suspicious Vehicle<br />BM3KWS");
+      circle_127._popup.options.maxWidth = 300;
+      map.addLayer(circle_127)
+      
+      var circle_128 = L.circle([37.8426102, -122.2788509], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_128.bindPopup("5/15/15 22:48<br />Suspicious Vehicle<br />BM3TWS");
+      circle_128._popup.options.maxWidth = 300;
+      map.addLayer(circle_128)
+      
+      var circle_129 = L.circle([37.85321075, -122.2971447], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_129.bindPopup("5/16/15 23:55<br />Suspicious Vehicle<br />HM3IWS, P");
+      circle_129._popup.options.maxWidth = 300;
+      map.addLayer(circle_129)
+      
+      var circle_130 = L.circle([37.8696459, -122.2874929], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_130.bindPopup("5/17/15 2:34<br />Suspicious Vehicle<br />BF3TWN");
+      circle_130._popup.options.maxWidth = 300;
+      map.addLayer(circle_130)
+      
+      var circle_131 = L.circle([37.8648428, -122.3018392], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_131.bindPopup("5/17/15 23:35<br />Suspicious Vehicle<br />HM1TWN");
+      circle_131._popup.options.maxWidth = 300;
+      map.addLayer(circle_131)
+      
+      var circle_132 = L.circle([37.866354, -122.310242], 20, {
+                            color: '#1F77B4',
+                            fillColor: '#1F77B4',
+                            fillOpacity: 0.6
+                            });
+      circle_132.bindPopup("5/18/15 21:04<br />Suspicious Vehicle<br />AM2IWS");
+      circle_132._popup.options.maxWidth = 300;
+      map.addLayer(circle_132)
+      
+
+      
+
+      
+
+      
+
+      
+
+
+
+   </script>
+
+</body>

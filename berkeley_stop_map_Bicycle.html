@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+   <link rel="stylesheet" href="https://rawgit.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.css">
+   <script src="https://rawgithub.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.js"></script>
+
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+
+   <link rel="stylesheet" href="https://birdage.github.io/Leaflet.awesome-markers/dist/leaflet.awesome.rotate.css">
+
+   
+   
+   
+   
+
+   <style>
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position:absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+      }
+
+   </style>
+</head>
+
+<body>
+
+   <div class="folium-map" id="folium_09ab8883ede54772b91b12c4fd921e86" style="width: 100%; height: 100%"></div>
+
+   <script>
+
+      
+
+      var base_tile = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg', {
+          maxZoom: 18,
+          minZoom: 1,
+          attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
+      });
+
+      var baseLayer = {
+        "Base Layer": base_tile
+      };
+
+      /*
+      addition of the wms layers
+      */
+
+      
+
+      /*
+      addition of the tile layers
+      */
+      
+
+      /*
+      list of layers to be added
+      */
+      var layer_list = {
+      
+      };
+
+      /*
+      Bounding box.
+      */
+      var southWest = L.latLng(-90, -180),
+          northEast = L.latLng(90, 180),
+          bounds = L.latLngBounds(southWest, northEast);
+
+      /*
+      Creates the map and adds the selected layers
+      */
+      var map = L.map('folium_09ab8883ede54772b91b12c4fd921e86', {
+                                       center:[37.87, -122.259],
+                                       zoom: 14,
+                                       maxBounds: bounds,
+                                       layers: [base_tile]
+                                     });
+
+      L.control.layers(baseLayer, layer_list).addTo(map);
+
+      //cluster group
+      var clusteredmarkers = L.markerClusterGroup();
+      //section for adding clustered markers
+      
+      //add the clustered markers to the group anyway
+      map.addLayer(clusteredmarkers);
+
+      
+
+      
+      var circle_1 = L.circle([37.8642505, -122.2652527], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_1.bindPopup("1/27/15 0:24<br />Bicycle<br />WM3TWS");
+      circle_1._popup.options.maxWidth = 300;
+      map.addLayer(circle_1)
+      
+      var circle_2 = L.circle([37.8509635, -122.2862931], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_2.bindPopup("1/28/15 1:33<br />Bicycle<br />BM4RWN");
+      circle_2._popup.options.maxWidth = 300;
+      map.addLayer(circle_2)
+      
+      var circle_3 = L.circle([37.8583478, -122.2533078], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_3.bindPopup("1/28/15 7:55<br />Bicycle<br />WM2TCN");
+      circle_3._popup.options.maxWidth = 300;
+      map.addLayer(circle_3)
+      
+      var circle_4 = L.circle([37.868811, -122.2589932], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_4.bindPopup("1/28/15 10:28<br />Bicycle<br />HM2TCN");
+      circle_4._popup.options.maxWidth = 300;
+      map.addLayer(circle_4)
+      
+      var circle_5 = L.circle([37.8684357, -122.2614604], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_5.bindPopup("1/28/15 10:44<br />Bicycle<br />WM2TCN");
+      circle_5._popup.options.maxWidth = 300;
+      map.addLayer(circle_5)
+      
+      var circle_6 = L.circle([37.8687287, -122.2591604], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_6.bindPopup("1/28/15 10:54<br />Bicycle<br />WM2TCN");
+      circle_6._popup.options.maxWidth = 300;
+      map.addLayer(circle_6)
+      
+      var circle_7 = L.circle([37.8688307, -122.2583329], 20, {
+                            color: '#8C564B',
+                            fillColor: '#8C564B',
+                            fillOpacity: 0.6
+                            });
+      circle_7.bindPopup("1/28/15 10:55<br />Bicycle<br />OM2TCN");
+      circle_7._popup.options.maxWidth = 300;
+      map.addLayer(circle_7)
+      
+      var circle_8 = L.circle([37.8687287, -122.2591604], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_8.bindPopup("1/28/15 11:04<br />Bicycle<br />WM2TCN");
+      circle_8._popup.options.maxWidth = 300;
+      map.addLayer(circle_8)
+      
+      var circle_9 = L.circle([37.8530749, -122.280709], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_9.bindPopup("1/28/15 23:29<br />Bicycle<br />WM4WWN");
+      circle_9._popup.options.maxWidth = 300;
+      map.addLayer(circle_9)
+      
+      var circle_10 = L.circle([37.8684184, -122.3025391], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_10.bindPopup("1/29/15 20:49<br />Bicycle<br />BM3TWS");
+      circle_10._popup.options.maxWidth = 300;
+      map.addLayer(circle_10)
+      
+      var circle_11 = L.circle([37.8766393, -122.2993264], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_11.bindPopup("1/29/15 21:05<br />Bicycle<br />BM4TWN");
+      circle_11._popup.options.maxWidth = 300;
+      map.addLayer(circle_11)
+      
+      var circle_12 = L.circle([37.8676515, -122.2919408], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_12.bindPopup("1/30/15 21:44<br />Bicycle<br />BM4TWN");
+      circle_12._popup.options.maxWidth = 300;
+      map.addLayer(circle_12)
+      
+      var circle_13 = L.circle([37.8614007, -122.2589916], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_13.bindPopup("2/1/15 0:42<br />Bicycle<br />WM3IWS");
+      circle_13._popup.options.maxWidth = 300;
+      map.addLayer(circle_13)
+      
+      var circle_14 = L.circle([37.8595436, -122.2591652], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_14.bindPopup("2/1/15 1:33<br />Bicycle<br />BM2TWN");
+      circle_14._popup.options.maxWidth = 300;
+      map.addLayer(circle_14)
+      
+      var circle_15 = L.circle([37.8654556, -122.270051], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_15.bindPopup("2/1/15 23:32<br />Bicycle<br />BM1TWN");
+      circle_15._popup.options.maxWidth = 300;
+      map.addLayer(circle_15)
+      
+      var circle_16 = L.circle([37.8828897, -122.2920363], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_16.bindPopup("2/2/15 0:14<br />Bicycle<br />BM2IWS");
+      circle_16._popup.options.maxWidth = 300;
+      map.addLayer(circle_16)
+      
+      var circle_17 = L.circle([37.8674642, -122.2594219], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_17.bindPopup("2/2/15 21:26<br />Bicycle<br />HM2TWN");
+      circle_17._popup.options.maxWidth = 300;
+      map.addLayer(circle_17)
+      
+      var circle_18 = L.circle([37.8688307, -122.2583329], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_18.bindPopup("2/3/15 10:46<br />Bicycle<br />WM2TCN");
+      circle_18._popup.options.maxWidth = 300;
+      map.addLayer(circle_18)
+      
+      var circle_19 = L.circle([37.8658022, -122.2675057], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_19.bindPopup("2/3/15 20:41<br />Bicycle<br />HM2TWS, M");
+      circle_19._popup.options.maxWidth = 300;
+      map.addLayer(circle_19)
+      
+      var circle_20 = L.circle([37.8693997, -122.2678732], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_20.bindPopup("2/9/15 9:13<br />Bicycle<br />BM2TWN");
+      circle_20._popup.options.maxWidth = 300;
+      map.addLayer(circle_20)
+      
+      var circle_21 = L.circle([37.8696459, -122.2874929], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_21.bindPopup("2/9/15 22:59<br />Bicycle<br />BM2TCS, M");
+      circle_21._popup.options.maxWidth = 300;
+      map.addLayer(circle_21)
+      
+      var circle_22 = L.circle([37.8690034, -122.2568986], 20, {
+                            color: '#1F77B4',
+                            fillColor: '#1F77B4',
+                            fillOpacity: 0.6
+                            });
+      circle_22.bindPopup("2/10/15 9:26<br />Bicycle<br />AM2TCN");
+      circle_22._popup.options.maxWidth = 300;
+      map.addLayer(circle_22)
+      
+      var circle_23 = L.circle([37.8636593, -122.2698367], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_23.bindPopup("2/10/15 9:41<br />Bicycle<br />BM4TCN");
+      circle_23._popup.options.maxWidth = 300;
+      map.addLayer(circle_23)
+      
+      var circle_24 = L.circle([37.8678341, -122.2658836], 20, {
+                            color: '#1F77B4',
+                            fillColor: '#1F77B4',
+                            fillOpacity: 0.6
+                            });
+      circle_24.bindPopup("2/10/15 16:39<br />Bicycle<br />AM2TCN");
+      circle_24._popup.options.maxWidth = 300;
+      map.addLayer(circle_24)
+      
+      var circle_25 = L.circle([37.8584799, -122.2531821], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_25.bindPopup("2/13/15 18:50<br />Bicycle<br />WM4IWS");
+      circle_25._popup.options.maxWidth = 300;
+      map.addLayer(circle_25)
+      
+      var circle_26 = L.circle([37.8547473, -122.2796258], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_26.bindPopup("2/15/15 1:10<br />Bicycle<br />BM4TWN");
+      circle_26._popup.options.maxWidth = 300;
+      map.addLayer(circle_26)
+      
+      var circle_27 = L.circle([37.8688307, -122.2583329], 20, {
+                            color: '#8C564B',
+                            fillColor: '#8C564B',
+                            fillOpacity: 0.6
+                            });
+      circle_27.bindPopup("2/17/15 13:03<br />Bicycle<br />OM2TCN");
+      circle_27._popup.options.maxWidth = 300;
+      map.addLayer(circle_27)
+      
+      var circle_28 = L.circle([37.8670261, -122.2999613], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_28.bindPopup("2/21/15 19:50<br />Bicycle<br />BM4RWS");
+      circle_28._popup.options.maxWidth = 300;
+      map.addLayer(circle_28)
+      
+      var circle_29 = L.circle([37.8534564, -122.2561625], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_29.bindPopup("2/24/15 12:35<br />Bicycle<br />BM4IWN, M");
+      circle_29._popup.options.maxWidth = 300;
+      map.addLayer(circle_29)
+      
+      var circle_30 = L.circle([37.8492244, -122.2678865], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_30.bindPopup("2/25/15 22:17<br />Bicycle<br />BM3TWN, HM2TWS");
+      circle_30._popup.options.maxWidth = 300;
+      map.addLayer(circle_30)
+      
+      var circle_31 = L.circle([37.8550477, -122.2866023], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_31.bindPopup("2/25/15 23:46<br />Bicycle<br />BM3TWN");
+      circle_31._popup.options.maxWidth = 300;
+      map.addLayer(circle_31)
+      
+      var circle_32 = L.circle([37.8561771, -122.2597288], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_32.bindPopup("2/27/15 17:41<br />Bicycle<br />WM2TWS");
+      circle_32._popup.options.maxWidth = 300;
+      map.addLayer(circle_32)
+      
+      var circle_33 = L.circle([37.8681459, -122.2966091], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_33.bindPopup("2/27/15 22:02<br />Bicycle<br />WM4TCN");
+      circle_33._popup.options.maxWidth = 300;
+      map.addLayer(circle_33)
+      
+      var circle_34 = L.circle([37.87016, -122.2762734], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_34.bindPopup("2/28/15 12:32<br />Bicycle<br />BM4IWS");
+      circle_34._popup.options.maxWidth = 300;
+      map.addLayer(circle_34)
+      
+      var circle_35 = L.circle([37.869446, -122.2817599], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_35.bindPopup("3/2/15 19:03<br />Bicycle<br />WM3TWN");
+      circle_35._popup.options.maxWidth = 300;
+      map.addLayer(circle_35)
+      
+      var circle_36 = L.circle([37.8505132, -122.2862084], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_36.bindPopup("3/2/15 22:13<br />Bicycle<br />BM4TWN");
+      circle_36._popup.options.maxWidth = 300;
+      map.addLayer(circle_36)
+      
+      var circle_37 = L.circle([37.848361, -122.2815481], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_37.bindPopup("3/2/15 22:59<br />Bicycle<br />WM4TWN");
+      circle_37._popup.options.maxWidth = 300;
+      map.addLayer(circle_37)
+      
+      var circle_38 = L.circle([37.8715926, -122.272747], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_38.bindPopup("3/4/15 9:08<br />Bicycle<br />WM3TCN");
+      circle_38._popup.options.maxWidth = 300;
+      map.addLayer(circle_38)
+      
+      var circle_39 = L.circle([37.8687287, -122.2591604], 20, {
+                            color: '#1F77B4',
+                            fillColor: '#1F77B4',
+                            fillOpacity: 0.6
+                            });
+      circle_39.bindPopup("3/4/15 15:20<br />Bicycle<br />AF1KAS");
+      circle_39._popup.options.maxWidth = 300;
+      map.addLayer(circle_39)
+      
+      var circle_40 = L.circle([37.8684357, -122.2614604], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_40.bindPopup("3/4/15 15:26<br />Bicycle<br />WM2TCN");
+      circle_40._popup.options.maxWidth = 300;
+      map.addLayer(circle_40)
+      
+      var circle_41 = L.circle([37.868811, -122.2589932], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_41.bindPopup("3/4/15 16:00<br />Bicycle<br />WF2TCN");
+      circle_41._popup.options.maxWidth = 300;
+      map.addLayer(circle_41)
+      
+      var circle_42 = L.circle([37.8664737, -122.2983845], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_42.bindPopup("3/4/15 23:21<br />Bicycle<br />BM3TCN");
+      circle_42._popup.options.maxWidth = 300;
+      map.addLayer(circle_42)
+      
+      var circle_43 = L.circle([37.8702937, -122.2751557], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_43.bindPopup("3/5/15 0:48<br />Bicycle<br />HM2RWS");
+      circle_43._popup.options.maxWidth = 300;
+      map.addLayer(circle_43)
+      
+      var circle_44 = L.circle([37.8690594, -122.2704546], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_44.bindPopup("3/5/15 16:53<br />Bicycle<br />WM2TCN");
+      circle_44._popup.options.maxWidth = 300;
+      map.addLayer(circle_44)
+      
+      var circle_45 = L.circle([37.8646125, -122.2907521], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_45.bindPopup("3/5/15 22:42<br />Bicycle<br />BM4TWN");
+      circle_45._popup.options.maxWidth = 300;
+      map.addLayer(circle_45)
+      
+      var circle_46 = L.circle([37.8579908, -122.2639445], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_46.bindPopup("3/6/15 11:54<br />Bicycle<br />WM4TCN");
+      circle_46._popup.options.maxWidth = 300;
+      map.addLayer(circle_46)
+      
+      var circle_47 = L.circle([37.8638261, -122.2815682], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_47.bindPopup("3/6/15 20:20<br />Bicycle<br />BM4TWN");
+      circle_47._popup.options.maxWidth = 300;
+      map.addLayer(circle_47)
+      
+      var circle_48 = L.circle([37.842048, -122.2834623], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_48.bindPopup("3/7/15 21:03<br />Bicycle<br />WM3TWS");
+      circle_48._popup.options.maxWidth = 300;
+      map.addLayer(circle_48)
+      
+      var circle_49 = L.circle([37.8549017, -122.2876222], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_49.bindPopup("3/10/15 4:14<br />Bicycle<br />BM4TWN");
+      circle_49._popup.options.maxWidth = 300;
+      map.addLayer(circle_49)
+      
+      var circle_50 = L.circle([37.8654556, -122.270051], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_50.bindPopup("3/11/15 7:51<br />Bicycle<br />WF4TWN");
+      circle_50._popup.options.maxWidth = 300;
+      map.addLayer(circle_50)
+      
+      var circle_51 = L.circle([37.8660389, -122.2656468], 20, {
+                            color: '#1F77B4',
+                            fillColor: '#1F77B4',
+                            fillOpacity: 0.6
+                            });
+      circle_51.bindPopup("3/12/15 12:56<br />Bicycle<br />AM2TCN");
+      circle_51._popup.options.maxWidth = 300;
+      map.addLayer(circle_51)
+      
+      var circle_52 = L.circle([37.856275, -122.2702119], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_52.bindPopup("3/18/15 18:45<br />Bicycle<br />BM4TWN, M");
+      circle_52._popup.options.maxWidth = 300;
+      map.addLayer(circle_52)
+      
+      var circle_53 = L.circle([37.8684357, -122.2614604], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_53.bindPopup("3/19/15 16:38<br />Bicycle<br />WM4TCN");
+      circle_53._popup.options.maxWidth = 300;
+      map.addLayer(circle_53)
+      
+      var circle_54 = L.circle([37.8854903, -122.271207], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_54.bindPopup("3/22/15 2:28<br />Bicycle<br />BM2RWN");
+      circle_54._popup.options.maxWidth = 300;
+      map.addLayer(circle_54)
+      
+      var circle_55 = L.circle([37.8505132, -122.2862084], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_55.bindPopup("3/22/15 23:15<br />Bicycle<br />BM3TWN, M");
+      circle_55._popup.options.maxWidth = 300;
+      map.addLayer(circle_55)
+      
+      var circle_56 = L.circle([37.8608619, -122.2907472], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_56.bindPopup("3/24/15 18:32<br />Bicycle<br />BM4KWS, M");
+      circle_56._popup.options.maxWidth = 300;
+      map.addLayer(circle_56)
+      
+      var circle_57 = L.circle([37.865421, -122.259921], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_57.bindPopup("3/26/15 1:18<br />Bicycle<br />WM3RWN");
+      circle_57._popup.options.maxWidth = 300;
+      map.addLayer(circle_57)
+      
+      var circle_58 = L.circle([37.84859, -122.2726366], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_58.bindPopup("3/26/15 18:43<br />Bicycle<br />BM4TWN");
+      circle_58._popup.options.maxWidth = 300;
+      map.addLayer(circle_58)
+      
+      var circle_59 = L.circle([37.8585341, -122.2669003], 20, {
+                            color: '#8C564B',
+                            fillColor: '#8C564B',
+                            fillOpacity: 0.6
+                            });
+      circle_59.bindPopup("3/26/15 19:24<br />Bicycle<br />OM4RWN");
+      circle_59._popup.options.maxWidth = 300;
+      map.addLayer(circle_59)
+      
+      var circle_60 = L.circle([37.8606254, -122.291825], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_60.bindPopup("3/27/15 21:42<br />Bicycle<br />HM3WWS");
+      circle_60._popup.options.maxWidth = 300;
+      map.addLayer(circle_60)
+      
+      var circle_61 = L.circle([37.8574759, -122.2834232], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_61.bindPopup("3/27/15 23:15<br />Bicycle<br />BM2TWS");
+      circle_61._popup.options.maxWidth = 300;
+      map.addLayer(circle_61)
+      
+      var circle_62 = L.circle([37.8588865, -122.2912479], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_62.bindPopup("3/29/15 23:33<br />Bicycle<br />WM2TWS");
+      circle_62._popup.options.maxWidth = 300;
+      map.addLayer(circle_62)
+      
+      var circle_63 = L.circle([37.85933, -122.2595042], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_63.bindPopup("3/31/15 17:29<br />Bicycle<br />WM2TCN");
+      circle_63._popup.options.maxWidth = 300;
+      map.addLayer(circle_63)
+      
+      var circle_64 = L.circle([37.8717526, -122.2718925], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_64.bindPopup("4/1/15 10:45<br />Bicycle<br />WM2TWN");
+      circle_64._popup.options.maxWidth = 300;
+      map.addLayer(circle_64)
+      
+      var circle_65 = L.circle([37.8718935, -122.3012573], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_65.bindPopup("4/1/15 22:39<br />Bicycle<br />WM4TWN");
+      circle_65._popup.options.maxWidth = 300;
+      map.addLayer(circle_65)
+      
+      var circle_66 = L.circle([37.8715926, -122.272747], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_66.bindPopup("4/2/15 22:29<br />Bicycle<br />BM2TWN");
+      circle_66._popup.options.maxWidth = 300;
+      map.addLayer(circle_66)
+      
+      var circle_67 = L.circle([37.9999768, -122.3255965], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_67.bindPopup("4/2/15 22:32<br />Bicycle<br />BM4TCN");
+      circle_67._popup.options.maxWidth = 300;
+      map.addLayer(circle_67)
+      
+      var circle_68 = L.circle([37.8715926, -122.272747], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_68.bindPopup("4/3/15 0:07<br />Bicycle<br />WM2TCN");
+      circle_68._popup.options.maxWidth = 300;
+      map.addLayer(circle_68)
+      
+      var circle_69 = L.circle([37.8715926, -122.272747], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_69.bindPopup("4/4/15 0:36<br />Bicycle<br />BM2TWN");
+      circle_69._popup.options.maxWidth = 300;
+      map.addLayer(circle_69)
+      
+      var circle_70 = L.circle([37.8486004, -122.2797491], 20, {
+                            color: '#1F77B4',
+                            fillColor: '#1F77B4',
+                            fillOpacity: 0.6
+                            });
+      circle_70.bindPopup("4/4/15 0:42<br />Bicycle<br />AR, OM3TWS");
+      circle_70._popup.options.maxWidth = 300;
+      map.addLayer(circle_70)
+      
+      var circle_71 = L.circle([37.849094, -122.2759989], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_71.bindPopup("4/4/15 20:01<br />Bicycle<br />BM4TWN");
+      circle_71._popup.options.maxWidth = 300;
+      map.addLayer(circle_71)
+      
+      var circle_72 = L.circle([37.8741062, -122.2996236], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_72.bindPopup("4/4/15 21:57<br />Bicycle<br />BM4TWS");
+      circle_72._popup.options.maxWidth = 300;
+      map.addLayer(circle_72)
+      
+      var circle_73 = L.circle([37.8684974, -122.2677981], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_73.bindPopup("4/6/15 12:53<br />Bicycle<br />WM4RWN");
+      circle_73._popup.options.maxWidth = 300;
+      map.addLayer(circle_73)
+      
+      var circle_74 = L.circle([37.8658022, -122.2675057], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_74.bindPopup("4/8/15 10:31<br />Bicycle<br />WM3TCN");
+      circle_74._popup.options.maxWidth = 300;
+      map.addLayer(circle_74)
+      
+      var circle_75 = L.circle([37.8681063, -122.2567029], 20, {
+                            color: '#1F77B4',
+                            fillColor: '#1F77B4',
+                            fillOpacity: 0.6
+                            });
+      circle_75.bindPopup("4/8/15 14:55<br />Bicycle<br />AM2TCN");
+      circle_75._popup.options.maxWidth = 300;
+      map.addLayer(circle_75)
+      
+      var circle_76 = L.circle([37.8671457, -122.295105], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_76.bindPopup("4/12/15 20:15<br />Bicycle<br />BM4KWS, BM3KWS");
+      circle_76._popup.options.maxWidth = 300;
+      map.addLayer(circle_76)
+      
+      var circle_77 = L.circle([37.8725211, -122.292731], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_77.bindPopup("4/12/15 23:43<br />Bicycle<br />BM4TCS");
+      circle_77._popup.options.maxWidth = 300;
+      map.addLayer(circle_77)
+      
+      var circle_78 = L.circle([37.8715926, -122.272747], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_78.bindPopup("4/14/15 11:38<br />Bicycle<br />WM2TCN");
+      circle_78._popup.options.maxWidth = 300;
+      map.addLayer(circle_78)
+      
+      var circle_79 = L.circle([37.871918, -122.2706021], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_79.bindPopup("4/15/15 21:38<br />Bicycle<br />HM2RWS");
+      circle_79._popup.options.maxWidth = 300;
+      map.addLayer(circle_79)
+      
+      var circle_80 = L.circle([37.8755683, -122.2914238], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_80.bindPopup("4/16/15 10:52<br />Bicycle<br />WM4TCN");
+      circle_80._popup.options.maxWidth = 300;
+      map.addLayer(circle_80)
+      
+      var circle_81 = L.circle([37.8522189, -122.2730277], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_81.bindPopup("4/18/15 16:07<br />Bicycle<br />WF4TWN");
+      circle_81._popup.options.maxWidth = 300;
+      map.addLayer(circle_81)
+      
+      var circle_82 = L.circle([37.8715113, -122.2730161], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_82.bindPopup("4/20/15 16:51<br />Bicycle<br />WF2WAN");
+      circle_82._popup.options.maxWidth = 300;
+      map.addLayer(circle_82)
+      
+      var circle_83 = L.circle([37.8684569, -122.2941041], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_83.bindPopup("4/20/15 23:19<br />Bicycle<br />HM4TWN");
+      circle_83._popup.options.maxWidth = 300;
+      map.addLayer(circle_83)
+      
+      var circle_84 = L.circle([37.8678341, -122.2658836], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_84.bindPopup("4/20/15 23:24<br />Bicycle<br />WM2TWS, M");
+      circle_84._popup.options.maxWidth = 300;
+      map.addLayer(circle_84)
+      
+      var circle_85 = L.circle([37.8715926, -122.272747], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_85.bindPopup("4/21/15 16:32<br />Bicycle<br />BM4TWS");
+      circle_85._popup.options.maxWidth = 300;
+      map.addLayer(circle_85)
+      
+      var circle_86 = L.circle([37.8527429, -122.2836967], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_86.bindPopup("4/23/15 20:38<br />Bicycle<br />BM4TON, FC");
+      circle_86._popup.options.maxWidth = 300;
+      map.addLayer(circle_86)
+      
+      var circle_87 = L.circle([37.8755683, -122.2914238], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_87.bindPopup("4/24/15 12:33<br />Bicycle<br />WM2TCN");
+      circle_87._popup.options.maxWidth = 300;
+      map.addLayer(circle_87)
+      
+      var circle_88 = L.circle([37.8666995, -122.2747672], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_88.bindPopup("4/25/15 4:21<br />Bicycle<br />BM4TWN");
+      circle_88._popup.options.maxWidth = 300;
+      map.addLayer(circle_88)
+      
+      var circle_89 = L.circle([37.8681063, -122.2567029], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_89.bindPopup("4/29/15 16:29<br />Bicycle<br />WF2TCN");
+      circle_89._popup.options.maxWidth = 300;
+      map.addLayer(circle_89)
+      
+      var circle_90 = L.circle([37.8648334, -122.2607244], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_90.bindPopup("4/29/15 16:48<br />Bicycle<br />HM4TCN, HM3TCN");
+      circle_90._popup.options.maxWidth = 300;
+      map.addLayer(circle_90)
+      
+      var circle_91 = L.circle([37.8763056, -122.2712271], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_91.bindPopup("5/1/15 9:43<br />Bicycle<br />WM2TCN");
+      circle_91._popup.options.maxWidth = 300;
+      map.addLayer(circle_91)
+      
+      var circle_92 = L.circle([37.8558553, -122.252929], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_92.bindPopup("5/4/15 2:38<br />Bicycle<br />BM3TWN");
+      circle_92._popup.options.maxWidth = 300;
+      map.addLayer(circle_92)
+      
+      var circle_93 = L.circle([37.85336, -122.2641476], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_93.bindPopup("5/4/15 17:20<br />Bicycle<br />WM3TCN");
+      circle_93._popup.options.maxWidth = 300;
+      map.addLayer(circle_93)
+      
+      var circle_94 = L.circle([37.8688246, -122.2932768], 20, {
+                            color: '#8C564B',
+                            fillColor: '#8C564B',
+                            fillOpacity: 0.6
+                            });
+      circle_94.bindPopup("5/5/15 1:06<br />Bicycle<br />OM2TWN");
+      circle_94._popup.options.maxWidth = 300;
+      map.addLayer(circle_94)
+      
+      var circle_95 = L.circle([37.8699847, -122.2705579], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_95.bindPopup("5/9/15 3:55<br />Bicycle<br />BM4TWN");
+      circle_95._popup.options.maxWidth = 300;
+      map.addLayer(circle_95)
+      
+      var circle_96 = L.circle([37.8694977, -122.2895222], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_96.bindPopup("5/10/15 21:57<br />Bicycle<br />HM2TWN");
+      circle_96._popup.options.maxWidth = 300;
+      map.addLayer(circle_96)
+      
+      var circle_97 = L.circle([37.8580862, -122.2847197], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_97.bindPopup("5/10/15 22:21<br />Bicycle<br />WM3TWN");
+      circle_97._popup.options.maxWidth = 300;
+      map.addLayer(circle_97)
+      
+      var circle_98 = L.circle([37.8535627, -122.276915], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_98.bindPopup("5/10/15 23:47<br />Bicycle<br />BM4TWS");
+      circle_98._popup.options.maxWidth = 300;
+      map.addLayer(circle_98)
+      
+      var circle_99 = L.circle([37.8685543, -122.2749779], 20, {
+                            color: '#1F77B4',
+                            fillColor: '#1F77B4',
+                            fillOpacity: 0.6
+                            });
+      circle_99.bindPopup("5/11/15 12:49<br />Bicycle<br />AM1TWN");
+      circle_99._popup.options.maxWidth = 300;
+      map.addLayer(circle_99)
+      
+      var circle_100 = L.circle([37.855948, -122.271559], 20, {
+                            color: '#FF7F0E',
+                            fillColor: '#FF7F0E',
+                            fillOpacity: 0.6
+                            });
+      circle_100.bindPopup("5/13/15 20:20<br />Bicycle<br />BM4TWS");
+      circle_100._popup.options.maxWidth = 300;
+      map.addLayer(circle_100)
+      
+      var circle_101 = L.circle([37.857893, -122.280157], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_101.bindPopup("5/14/15 15:06<br />Bicycle<br />WF2TWN");
+      circle_101._popup.options.maxWidth = 300;
+      map.addLayer(circle_101)
+      
+      var circle_102 = L.circle([37.8669493, -122.2657063], 20, {
+                            color: '#8C564B',
+                            fillColor: '#8C564B',
+                            fillOpacity: 0.6
+                            });
+      circle_102.bindPopup("5/15/15 10:47<br />Bicycle<br />OM2TCN");
+      circle_102._popup.options.maxWidth = 300;
+      map.addLayer(circle_102)
+      
+      var circle_103 = L.circle([37.8690034, -122.2568986], 20, {
+                            color: '#2CA02C',
+                            fillColor: '#2CA02C',
+                            fillOpacity: 0.6
+                            });
+      circle_103.bindPopup("5/15/15 11:05<br />Bicycle<br />HM2TCN");
+      circle_103._popup.options.maxWidth = 300;
+      map.addLayer(circle_103)
+      
+      var circle_104 = L.circle([37.8571079, -122.2637692], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_104.bindPopup("5/15/15 11:31<br />Bicycle<br />WF3TCN");
+      circle_104._popup.options.maxWidth = 300;
+      map.addLayer(circle_104)
+      
+      var circle_105 = L.circle([37.8722857, -122.2883423], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_105.bindPopup("5/15/15 12:19<br />Bicycle<br />WM2TCN");
+      circle_105._popup.options.maxWidth = 300;
+      map.addLayer(circle_105)
+      
+      var circle_106 = L.circle([37.8562257, -122.2879211], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_106.bindPopup("5/15/15 23:24<br />Bicycle<br />WM4TWS");
+      circle_106._popup.options.maxWidth = 300;
+      map.addLayer(circle_106)
+      
+      var circle_107 = L.circle([37.8532881, -122.2691947], 20, {
+                            color: '#9467BD',
+                            fillColor: '#9467BD',
+                            fillOpacity: 0.6
+                            });
+      circle_107.bindPopup("5/18/15 23:34<br />Bicycle<br />WM4TWN");
+      circle_107._popup.options.maxWidth = 300;
+      map.addLayer(circle_107)
+      
+
+      
+
+      
+
+      
+
+      
+
+
+
+   </script>
+
+</body>

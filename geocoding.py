@@ -1,4 +1,5 @@
 import sys
+import time
 from geopy.geocoders import GoogleV3
 
 LIMIT = 2500
@@ -69,6 +70,7 @@ def geocode(dataset, geocoder):
       row['address'] = row['address'].split(',')[0]
       continue
     # NEED lat and long
+    time.sleep(0.2)
     res = get_lat_long(row['address'], geocoder)
     if res == -1:
       print('API Limit reached.')
@@ -100,8 +102,8 @@ if __name__ == '__main__':
   f = open(f_name, 'r')
   d = file_to_dict(f, '|')
   # GEOCODING # Warning: API limit is strict!
-  # geocoder = GoogleV3(api_key = 'AIzaSyDaqUXeLCq1dJ2rhkzq6qry_sy7VPopNwE', timeout = 10)
-  # geocode(d, geocoder)
+  geocoder = GoogleV3(api_key = 'AIzaSyC2tmJgfw8-hd7-AmFLv_SJjps5p7uyPqA', timeout = 10)
+  geocode(d, geocoder)
   # OUTPUT
   of = open('output.txt', 'w')
   dict_to_file(d, of, '|')
