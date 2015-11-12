@@ -103,8 +103,8 @@ if __name__ == '__main__':
   d = file_to_dict(f, '|')
   # GEOCODING # Warning: API limit is strict!
   # geocoder = GoogleV3(api_key = 'AIzaSyC2tmJgfw8-hd7-AmFLv_SJjps5p7uyPqA', timeout = 30)
-  geocoder = GoogleV3(api_key = 'AIzaSyCPiERHW2TpMsRxCuEeVfGKD19jOJuw7vs', timeout = 30)
-  geocode(d, geocoder)
+  # geocoder = GoogleV3(api_key = 'AIzaSyCPiERHW2TpMsRxCuEeVfGKD19jOJuw7vs', timeout = 30)
+  # geocode(d, geocoder)
   # OUTPUT
   of = open('output.txt', 'w')
   dict_to_file(d, of, '|')
